@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 function indexPage({ children }) {
 	useEffect(() => {
-		document.title = 'Alaeddine Messadi'
+		document.title = 'COVID-19-REPORT-DASHBOARD'
 	})
 
 	return (
