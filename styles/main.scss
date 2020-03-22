@@ -1,6 +1,25 @@
 // font-awesome
 // @import "../node_modules/font-awesome/css/font-awesome.css";
-@import "fonts/fontawesome.scss";
-@import "fonts/brands.scss";
-@import "fonts/regular.scss";
-@import "fonts/solid.scss";
+// @import "fonts/fontawesome.scss";
+// @import "fonts/brands.scss";
+// @import "fonts/regular.scss";
+// @import "fonts/solid.scss";
+
+// import overridden variables
+@import "./lux/variables.scss";
+@import "variables.scss";
+
+// import bulma
+@import "../node_modules/bulma/bulma.sass";
+@import '../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css';
+// @import '../node_modules/bulma-switch/dist/css/bulma-switch.min.css';
+// @import '../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css';
+
+// import overridden variables
+@import "./lux/overrides.scss";
+
+//  import nprogress style
+@import "nprogress.scss";
+
+// Import customized styles
+@import "style.scss";

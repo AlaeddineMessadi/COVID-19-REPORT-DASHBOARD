@@ -19,16 +19,18 @@ export default class Layout extends Document {
 				<Head>
 					<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 					<link rel="shortcut icon" href="img/favicon.ico" />
+
 				</Head>
 
 				<Main />
 
 				<FooterSection
-					description="Freelance Web Developer"
+					description="CoronaVirus"
 					url="#"
-					urlTitle="Alaeddine Messadi"
+					urlTitle="Dashboard"
 				/>
 				<NextScript />
+				<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 			</Html>
 		)
 	}

@@ -1,6 +1,6 @@
 function FooterSection({ description = "Footer Description", url = "#", urlTitle = "url title" }) {
   return (
-    <footer className="footer has-background-black">
+    <footer className="footer has-background-primary">
       <div className="section-heading has-text-centered">
         <p className="has-text-white-bis">
           <span className="has-text-white-bis has-text-weight-semibold">

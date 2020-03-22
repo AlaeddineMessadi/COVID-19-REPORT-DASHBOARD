@@ -1,5 +1,7 @@
 import App from 'next/app'
-import '../styles/main.scss'
+
+
+import '../styles/main.scss';
 
 
 

@@ -10,7 +10,9 @@ function indexPage({ children }) {
 	return (
 		<div>
 			<Navigation />
-			THis is DIV
+			{
+
+			}
 		</div>
 	)
 }

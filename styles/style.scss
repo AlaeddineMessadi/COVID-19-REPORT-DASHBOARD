@@ -1,0 +1,114 @@
+.grid {
+  display: grid;
+  grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+}
+
+.grid * {
+  grid-column: md;
+}
+
+.grid-xl {
+  grid-column: xl;
+}
+
+.is-paddingless-horizontal {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.center,
+.center-column,
+.top,
+.right,
+.bottom,
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-column {
+  flex-direction: column;
+}
+
+.top {
+  align-items: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.bottom {
+  align-items: flex-end;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.single-spaced,
+.single-spaced * {
+  line-height: 1;
+}
+
+.about-me {
+  max-height: 500px;
+}
+
+.blink::after {
+  content: "|";
+  opacity: 1;
+  font-size: 1.7rem;
+  animation: blink .8s infinite;
+}
+
+.ck.ck-content {
+  min-height: 300px;
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.margin-bottom {
+  margin-bottom: 30px !important;
+}
+
+
+.is-transparent {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+
+@media (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 672px) {
+  :root {
+    font-size: 90%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
