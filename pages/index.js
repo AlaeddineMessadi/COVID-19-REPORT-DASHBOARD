@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Navigation from '../components/navigation'
 
 
 function indexPage({ children }) {
@@ -8,6 +9,7 @@ function indexPage({ children }) {
 
 	return (
 		<div>
+			<Navigation />
 			THis is DIV
 		</div>
 	)

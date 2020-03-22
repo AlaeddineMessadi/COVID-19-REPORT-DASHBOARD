@@ -2,6 +2,22 @@ import Link from 'next/link'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { useState, Fragment } from 'react'
+import { Navbar } from 'bloomer/lib/components/Navbar/Navbar'
+import { NavbarBrand } from 'bloomer/lib/components/Navbar/NavbarBrand'
+import { NavbarItem } from 'bloomer/lib/components/Navbar/NavbarItem'
+import { Icon } from 'bloomer/lib/elements/Icon'
+import { NavbarBurger } from 'bloomer/lib/components/Navbar/NavbarBurger'
+import { NavbarMenu } from 'bloomer/lib/components/Navbar/NavbarMenu'
+import { NavbarLink } from 'bloomer/lib/components/Navbar/NavbarLink'
+import { NavbarDropdown } from 'bloomer/lib/components/Navbar/NavbarDropdown'
+import { NavbarDivider } from 'bloomer/lib/components/Navbar/NavbarDivider'
+import { NavbarStart } from 'bloomer/lib/components/Navbar/NavbarStart'
+import { NavbarEnd } from 'bloomer/lib/components/Navbar/NavbarEnd'
+import { Field } from 'bloomer/lib/elements/Form/Field/Field'
+import { Control } from 'bloomer/lib/elements/Form/Control'
+import { Button } from 'bloomer/lib/elements/Button'
+
+// import logo from '../static/logo.png';
 
 Router.events.on('routeChangeStart', url => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -20,12 +36,11 @@ const Navigation = (params) => {
     setIsActive(!isActive)
   }
 
-  const brand = 'https://bloomer.js.org/dist/07990594.png';
   return (
     <Fragment>
       <Navbar style={ { border: 'solid 1px #00D1B2', margin: '0' } }>
         <NavbarBrand>
-          <NavbarItem> <img src={ brand } style={ { marginRight: 5 } } /> Bloomer </NavbarItem>
+          <NavbarItem> <img src='static/logo.png' style={ { marginRight: 5 } } /> Bloomer </NavbarItem>
           <NavbarItem isHidden='desktop'>
             <Icon className='fa fa-github' />
           </NavbarItem>
