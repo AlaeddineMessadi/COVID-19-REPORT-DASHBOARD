@@ -1,3 +1,5 @@
+import { BASE_URL as API_BASE_URL } from "./constants";
+
 export const convertISODate = isoDate => {
   const date = new Date(isoDate);
   const year = date.getFullYear();
@@ -10,4 +12,21 @@ export const convertISODate = isoDate => {
   const result = `${year} - ${month} - ${dt} |  ${date.getUTCHours()}:${date.getUTCMinutes()}`;
 
   return result;
+}
+
+/**
+ * Get API's URLs
+ */
+export const endpoint = {
+  getBriefUrl: () => {
+    return `${API_BASE_URL}/brief`;
+  },
+
+  getLatestUrl: () => {
+    return `${API_BASE_URL}/latest`;
+  },
+
+  getTimeseriesUrl: () => {
+    return `${API_BASE_URL}/timeseries`;
+  },
 }

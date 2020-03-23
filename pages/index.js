@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 import axios from 'axios';
 import Brief from '../components/sections/brief';
 import SectionTitle from '../components/sectionTitle';
-import { convertISODate } from '../utils';
+import { convertISODate, endpoint } from '../utils';
 
-const BASE_URL = 'https://covid-19-report-api.now.sh/api/v1'
 
 function IndexPage({ data, lastUpdate }) {
 	useEffect(() => {
@@ -24,7 +23,7 @@ function IndexPage({ data, lastUpdate }) {
 
 IndexPage.getInitialProps = async (ctx) => {
 	try {
-		const { data } = await axios.get(`${BASE_URL}/cases/brief`);
+		const { data } = await axios.get(endpoint.getBriefUrl());
 
 		return { ...data }
 	} catch (error) {
