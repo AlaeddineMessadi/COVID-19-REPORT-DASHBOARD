@@ -1,10 +1,10 @@
 
 
 const types = {
-  confirmed: <i class="fas fa-hospital-alt is-size-3 is-pulled-right has-text-info"></i>,
-  deaths: <i class="fas fa-biohazard is-size-3 is-pulled-right has-text-danger"></i>,
-  recovered: <i class="fas fa-first-aid is-size-3 is-pulled-right has-text-success"></i>,
-  percentage: <i class="fas fa-percent is-size-3 is-pulled-right has-text-primary"></i>
+  confirmed: <i className="fas fa-hospital-alt is-size-3 is-pulled-right has-text-info"></i>,
+  deaths: <i className="fas fa-biohazard is-size-3 is-pulled-right has-text-danger"></i>,
+  recovered: <i className="fas fa-first-aid is-size-3 is-pulled-right has-text-success"></i>,
+  percentage: <i className="fas fa-percent is-size-3 is-pulled-right has-text-primary"></i>
 }
 
 const TileElement = ({ title, value }) => {

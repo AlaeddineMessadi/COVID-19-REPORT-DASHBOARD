@@ -17,20 +17,3 @@ export const convertISODate = isoDate => {
 export const formatNumber = (num) => {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
-
-/**
- * Get API's URLs
- */
-export const endpoint = {
-  getBriefUrl: () => {
-    return `${API_BASE_URL}/brief`;
-  },
-
-  getLatestUrl: () => {
-    return `${API_BASE_URL}/latest`;
-  },
-
-  getTimeseriesUrl: () => {
-    return `${API_BASE_URL}/timeseries`;
-  },
-}

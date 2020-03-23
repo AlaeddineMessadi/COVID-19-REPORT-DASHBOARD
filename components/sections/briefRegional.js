@@ -1,29 +1,31 @@
-import TileElement from "../tile";
+import TileElement from "../elements/tile";
 import { formatNumber } from "../../utils";
+import TileSmall from "../elements/tileSmall";
 
 const BriefRegional = ({ data = {} }) => {
+
+  console.log(data);
 
   return (
     <div className="tile is-ancestor has-text-centered">
       {
         Object.keys(data).map(
           (e, i) =>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">439k</p>
-                <p class="subtitle">Users</p>
-              </article>
-            </div>
+            <TileSmall
+              key={ i }
+              title={ formatNumber(data[e]) }
+              value={ e } />
         )
       }
-      <div className="column">
-        <TileElement title="Fatality Rate" value={ data
+      <TileSmall
+        title={ data
           ? `${(
             (data.deaths / data.confirmed) *
             100
           ).toFixed(2)}`
-          : '-' } />
-      </div>
+          : '-' }
+        value="Fatality Rate"
+      />
     </div>
   )
 }

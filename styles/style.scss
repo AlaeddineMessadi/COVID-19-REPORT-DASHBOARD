@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Breamcatcher';
+  src: url(fonts/breamcatcher.ttf) format('truetype');
+}
+
+// body {
+//   font-family: "Breamcatcher";
+//   background-image: url('/static/Bgasdsd.jpg');
+// }
+
 .grid {
   display: grid;
   grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
@@ -88,6 +98,17 @@
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
+}
+
+.toxic {
+  background: #2b7936;
+  width: 140px;
+  margin: 0 auto;
+  position: relative;
+  top: -10px;
+  background: #1e3c23;
+  border-color: #2b7936;
+  cursor: pointer;
 }
 
 

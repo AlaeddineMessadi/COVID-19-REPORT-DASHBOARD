@@ -1,17 +1,25 @@
-import { endpoint } from '.';
 import Axios from 'axios';
+import { endpoint } from './constants';
 
 class ApiManager {
   static async readBrief() {
-    return await Axios.get(endpoint.getBriefUrl())
+    const { data } = await Axios.get(endpoint.getBriefUrl());
+    return data;
+  }
+
+  static async readCountries() {
+    const { data } = await Axios.get(endpoint.getCountriesUrl());
+    return data;
   }
 
   static async readLatest() {
-    return await Axios.get(endpoint.getLatestUrl())
+    const { data } = await Axios.get(endpoint.getLatestUrl());
+    return data;
   }
 
   static async readTimeseries() {
-    return await Axios.get(endpoint.getTimeseriesUrl())
+    const { data } = await Axios.get(endpoint.getTimeseriesUrl());
+    return data;
   }
 }
 

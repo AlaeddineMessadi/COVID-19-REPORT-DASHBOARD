@@ -1,4 +1,4 @@
-import TileElement from "../tile";
+import TileElement from "../elements/tile";
 import { formatNumber } from "../../utils";
 
 const Brief = ({ data = {} }) => {
