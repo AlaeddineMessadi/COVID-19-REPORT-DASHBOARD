@@ -19,8 +19,8 @@ export default class Layout extends Document {
 				<Head>
 					<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 					<link rel="shortcut icon" href="img/favicon.ico" />
-
 				</Head>
+				<Navigation />
 
 				<Main />
 

@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
-import Navigation from '../components/navigation'
 
 
-function indexPage({ children }) {
+function IndexPage({ text, children }) {
 	useEffect(() => {
 		document.title = 'COVID-19-REPORT-DASHBOARD'
 	})
 
 	return (
 		<div>
-			<Navigation />
-			{
-
-			}
+			{ text }
 		</div>
 	)
 }
 
-export default indexPage
+IndexPage.getInitialProps = (ctx) => {
+	return { text: 'hello' }
+}
+
+export default IndexPage
