@@ -1,7 +1,7 @@
 {
   "build": {
     "env": {
-      "API_URL": "http://localhost:3001/api"
+      "API_URL": "https://covid-19-report-api.now.sh/api/v1"
     }
   }
 }
