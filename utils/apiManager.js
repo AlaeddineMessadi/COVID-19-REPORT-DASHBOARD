@@ -12,13 +12,14 @@ class ApiManager {
     return data;
   }
 
-  static async readLatest() {
-    const { data } = await Axios.get(endpoint.getLatestUrl());
+  static async readLatest(iso) {
+    const { data } = await Axios.get(endpoint.getLatestUrl(), { params: { iso } }
+    );
     return data;
   }
 
-  static async readTimeseries() {
-    const { data } = await Axios.get(endpoint.getTimeseriesUrl());
+  static async readTimeseries(iso) {
+    const { data } = await Axios.get(endpoint.getTimeseriesUrl(), { params: { iso } });
     return data;
   }
 }

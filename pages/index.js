@@ -31,6 +31,15 @@ function IndexPage({ data, lastUpdate, countries }) {
 			})
 		)
 
+
+	const handleCountrySelection = async e => {
+		const { value: iso } = e;
+		const response = await ApiManager.readBrief();
+		const response2 = await ApiManager.readLatest(iso);
+		console.log('response', response);
+		console.log('response', response2);
+	}
+
 	return (
 		<Fragment>
 			<section className="section">
@@ -46,7 +55,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 				<SectionTitle title="Regional" subtitle="Select Country/Region" />
 				<div className="container">
 					<div className="section" >
-						<InputSearch selected={ regional.selected } options={ countriesOption } />
+						<InputSearch selected={ regional.selected } options={ countriesOption } onChange={ handleCountrySelection } />
 					</div>
 					<br />
 
