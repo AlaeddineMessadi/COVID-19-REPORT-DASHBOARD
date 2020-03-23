@@ -1,18 +1,17 @@
-import RestClient from './RestClient';
-import UrlList from './UrlList';
 import { endpoint } from '.';
+import Axios from 'axios';
 
 class ApiManager {
-  async readBrief() {
-    return await axios.get(endpoint.getBriefUrl())
+  static async readBrief() {
+    return await Axios.get(endpoint.getBriefUrl())
   }
 
-  async readLatest() {
-    return await axios.get(endpoint.getLatestUrl())
+  static async readLatest() {
+    return await Axios.get(endpoint.getLatestUrl())
   }
 
-  async readTimeseries() {
-    return await axios.get(endpoint.getTimeseriesUrl())
+  static async readTimeseries() {
+    return await Axios.get(endpoint.getTimeseriesUrl())
   }
 }
 

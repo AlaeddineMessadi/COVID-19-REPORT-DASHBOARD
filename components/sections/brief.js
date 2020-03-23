@@ -1,21 +1,28 @@
 import TileElement from "../tile";
 
-const Brief = ({ data }) => {
+const Brief = ({ data = {} }) => {
 
   return (
     <div className="columns">
       {
         Object.keys(data).map(
           (e, i) =>
-            <div className="column">
+            <div key={ i } className="column">
               <TileElement
-                key={ i }
                 title={ e }
-                value={ data[e] }
+                value={ parseFloat(data[e]) }
               />
             </div>
         )
       }
+      <div className="column">
+        <TileElement title="Fatality Rate" value={ data
+          ? `${(
+            (data.deaths / data.confirmed) *
+            100
+          ).toFixed(2)} %`
+          : '-' } />
+      </div>
     </div>
   )
 }

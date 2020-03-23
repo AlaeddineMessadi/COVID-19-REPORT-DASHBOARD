@@ -1,4 +1,4 @@
-import { BASE_URL as API_BASE_URL } from "./constants";
+import { API_BASE_URL } from "./constants";
 
 export const convertISODate = isoDate => {
   const date = new Date(isoDate);
