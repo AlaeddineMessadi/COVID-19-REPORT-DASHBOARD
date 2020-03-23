@@ -30,7 +30,7 @@ export default class Layout extends Document {
 					urlTitle="Dashboard"
 				/>
 				<NextScript />
-				<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+				<script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js"></script>
 			</Html>
 		)
 	}

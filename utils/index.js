@@ -9,9 +9,13 @@ export const convertISODate = isoDate => {
   if (dt < 10) { dt = '0' + dt; }
   if (month < 10) { month = '0' + month; }
 
-  const result = `${year} - ${month} - ${dt} |  ${date.getUTCHours()}:${date.getUTCMinutes()}`;
+  const result = `${dt} - ${month} - ${year}  |  ${date.getUTCHours()}:${date.getUTCMinutes()}`;
 
   return result;
+}
+
+export const formatNumber = (num) => {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
 /**

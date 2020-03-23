@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import axios from 'axios';
 import Brief from '../components/sections/brief';
 import SectionTitle from '../components/sectionTitle';
 import { convertISODate, endpoint } from '../utils';
 import ApiManager from '../utils/apiManager';
+import BriefRegional from '../components/sections/briefRegional';
 
 
 function IndexPage({ data, lastUpdate }) {
@@ -12,13 +13,23 @@ function IndexPage({ data, lastUpdate }) {
 	})
 
 	return (
-		<section className="section">
-			<SectionTitle title="Word Wide" subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' } />
-
+		<Fragment>
+			<section className="section">
+				<SectionTitle title="Word Wide" subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' } />
+				<div className="container">
+					<Brief data={ data } />
+				</div>
+			</section>
 			<div className="container">
-				<Brief data={ data } />
+				<div class="is-divider" data-content="Analytics"></div>
 			</div>
-		</section>
+			<section className="section">
+				<SectionTitle title="Regional" subtitle="Select Country/Region" />
+				<div className="container">
+					<BriefRegional data={ data } />
+				</div>
+			</section>
+		</Fragment>
 	)
 }
 
@@ -28,7 +39,7 @@ IndexPage.getInitialProps = async (ctx) => {
 		let { data, message } = await ApiManager.readBrief();
 
 		const response = message ? { data: {} } : { ...data };
-		console.log(response);
+
 		return { ...response }
 	} catch (error) {
 		console.error(error);

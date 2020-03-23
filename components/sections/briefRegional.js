@@ -1,18 +1,18 @@
 import TileElement from "../tile";
 import { formatNumber } from "../../utils";
 
-const Brief = ({ data = {} }) => {
+const BriefRegional = ({ data = {} }) => {
 
   return (
-    <div className="columns">
+    <div className="tile is-ancestor has-text-centered">
       {
         Object.keys(data).map(
           (e, i) =>
-            <div key={ i } className="column">
-              <TileElement
-                title={ e }
-                value={ formatNumber(data[e]) }
-              />
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <p class="title">439k</p>
+                <p class="subtitle">Users</p>
+              </article>
             </div>
         )
       }
@@ -28,4 +28,4 @@ const Brief = ({ data = {} }) => {
   )
 }
 
-export default Brief;
+export default BriefRegional;
