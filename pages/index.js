@@ -6,7 +6,7 @@ import { convertISODate, endpoint, parseLatestResponse } from '../utils';
 import ApiManager from '../utils/apiManager';
 import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
-
+import LineChartComponent from '../components/charts/lineChart'
 
 function IndexPage({ data, lastUpdate, countries }) {
 	useEffect(() => {
@@ -20,7 +20,8 @@ function IndexPage({ data, lastUpdate, countries }) {
 			confirmed: '-',
 			deaths: '-',
 			recovered: '-'
-		}
+		},
+		chart: [],
 	}
 	const [regional, setRegional] = useState(initialState);
 
@@ -36,14 +37,23 @@ function IndexPage({ data, lastUpdate, countries }) {
 	const handleCountrySelection = async e => {
 		const { value: iso, label } = e;
 		setRegional({ ...regional, isLoading: true })
-		const { data } = await ApiManager.readLatest(iso);
-		const { confirmed, deaths, recovered } = data[0];
+		const { data: responseLatest } = await ApiManager.readLatest(iso);
+		const { confirmed, deaths, recovered } = responseLatest[0];
+
+
+		const { data: responseTimeSeries } = await ApiManager.readTimeseries(iso);
+		const { location, timeseries } = responseTimeSeries[0];
+
+		// convert for linear charts
+		let result = []
+		Object.keys(timeseries).map(e => result.push({ name: e, ...timeseries[e] }));
 
 		setRegional({
 			...regional,
 			isLoading: false,
 			selected: label,
-			brief: { confirmed, deaths, recovered }
+			brief: { confirmed, deaths, recovered },
+			chart: result
 		});
 	}
 
@@ -67,6 +77,31 @@ function IndexPage({ data, lastUpdate, countries }) {
 					<br />
 
 					<BriefRegional data={ regional.brief } isLoading={ regional.isLoading } />
+
+					<div className="columns is-multiline">
+						<div className="column">
+							<LineChartComponent
+								data={ regional.chart }
+								mainKey="name"
+								dataKey="confirmed" />
+						</div>
+						<div className="column">
+							<LineChartComponent
+								data={ regional.chart }
+								mainKey="name"
+								dataKey="deaths"
+								stroke="#d9534f"
+								fill="#eb4034" />
+						</div>
+						<div className="column">
+							<LineChartComponent
+								data={ regional.chart }
+								mainKey="name"
+								dataKey="recovered"
+								stroke="#4bbf73"
+								fill="#3ac76b" />
+						</div>
+					</div>
 				</div>
 			</section>
 		</Fragment>

@@ -22,9 +22,9 @@ export const endpoint = {
   },
 }
 
-const help = {
+export const help = {
   confirmed: 'Number of confirmed infected cases',
   deaths: 'Number of deaths cause by COVID-19',
   recovered: 'Number of recovered cases',
-  fatalityRate: '(CFR) proportion of deaths compared to the total number of people diagnosed with the disease'
+  fatalityRate: 'proportion of deaths compared to the total of confirmed'
 }
