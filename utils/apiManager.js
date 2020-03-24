@@ -12,16 +12,22 @@ class ApiManager {
     return data;
   }
 
-  static async readLatest(iso) {
-    const { data } = await Axios.get(endpoint.getLatestUrl(), { params: { iso } }
+  static async readLatest(iso, province) {
+    const { data } = await Axios.get(endpoint.getLatestUrl(), { params: { iso, province } }
     );
     return data;
   }
 
-  static async readTimeseries(iso) {
-    const { data } = await Axios.get(endpoint.getTimeseriesUrl(), { params: { iso } });
+  static async readTimeseries(iso, province) {
+    const { data } = await Axios.get(endpoint.getTimeseriesUrl(), { params: { iso, province } });
     return data;
   }
 }
 
 export default ApiManager;
+
+
+export const getIsoCode = async name => {
+  const response = await Axios.get(`https://restcountries.eu/rest/v2/name/${elm}?fullText=true`);
+  return response.alpha2Code;
+}

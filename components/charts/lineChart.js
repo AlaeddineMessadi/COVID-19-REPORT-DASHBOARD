@@ -15,7 +15,7 @@ const LineChartComponent = ({ data, dataKey, mainKey = "name", stroke = '#8884d8
             <YAxis />
             <Tooltip />
             <Line type='monotone' dataKey={ dataKey } stroke={ stroke } />
-            <Brush />
+            {/* <Brush /> */ }
           </LineChart>
         </ResponsiveContainer>
       </div>

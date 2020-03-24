@@ -7,15 +7,18 @@ import ApiManager from '../utils/apiManager';
 import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
 import LineChartComponent from '../components/charts/lineChart'
+import RegionalLineCharts from '../components/sections/regionalLineCharts';
+import Axios from 'axios';
 
 function IndexPage({ data, lastUpdate, countries }) {
+	// console.log(countries)
 	useEffect(() => {
 		document.title = 'COVID-19-REPORT-DASHBOARD';
 	})
 
 	const initialState = {
 		isLoading: false,
-		selected: 'us',
+		selected: '',
 		brief: {
 			confirmed: '-',
 			deaths: '-',
@@ -23,21 +26,28 @@ function IndexPage({ data, lastUpdate, countries }) {
 		},
 		chart: [],
 	}
+
+	/** Declare and Initialize Regional state */
 	const [regional, setRegional] = useState(initialState);
 
+
+	/** Prepare Select options  */
 	const countriesOption = Object.keys(countries)
-		.map(
-			elm => ({
+		.map(elm => {
+			const { provincestate, countrycode: { iso2 = '', iso3 = '' } = {} } = countries[elm];
+			return {
 				label: elm,
-				value: countries[elm].iso2 || countries[elm].iso3   // incase iso2 undefined use iso3 | server handle both
-			})
-		)
+				value: `${(iso2 || iso3)}${provincestate ? '.' + provincestate : ''}`    // incase iso2 undefined use iso3 | server handle both
+			}
+		});
 
 
 	const handleCountrySelection = async e => {
-		const { value: iso, label } = e;
+		const { value, label } = e;
+		const [iso, provincestate] = value.split('.');
+
 		setRegional({ ...regional, isLoading: true })
-		const { data: responseLatest } = await ApiManager.readLatest(iso);
+		const { data: responseLatest } = await ApiManager.readLatest(iso, provincestate);
 		const { confirmed, deaths, recovered } = responseLatest[0];
 
 
@@ -79,28 +89,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 
 					<BriefRegional data={ regional.brief } isLoading={ regional.isLoading } />
 
-					<div className="columns is-multiline">
-						<div className="column">
-							<LineChartComponent
-								data={ regional.chart }
-								mainKey="name"
-								dataKey="confirmed" />
-						</div>
-						<div className="column">
-							<LineChartComponent
-								data={ regional.chart }
-								mainKey="name"
-								dataKey="deaths"
-								stroke="#d9534f" />
-						</div>
-						<div className="column">
-							<LineChartComponent
-								data={ regional.chart }
-								mainKey="name"
-								dataKey="recovered"
-								stroke="#4bbf73" />
-						</div>
-					</div>
+					{/* <RegionalLineCharts data={ regional.chart } /> */ }
 				</div>
 			</section>
 		</Fragment>
