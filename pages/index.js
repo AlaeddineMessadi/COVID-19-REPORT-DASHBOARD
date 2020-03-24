@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment, useState } from 'react'
-import axios from 'axios';
+
 import Brief from '../components/sections/brief';
 import SectionTitle from '../components/sectionTitle';
 import { convertISODate, endpoint, parseLatestResponse } from '../utils';
