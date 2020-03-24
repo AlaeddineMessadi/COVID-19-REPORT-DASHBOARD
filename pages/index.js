@@ -53,7 +53,8 @@ function IndexPage({ data, lastUpdate, countries }) {
 			isLoading: false,
 			selected: label,
 			brief: { confirmed, deaths, recovered },
-			chart: result
+			chart: result,
+			heatMap: []
 		});
 	}
 
@@ -90,16 +91,14 @@ function IndexPage({ data, lastUpdate, countries }) {
 								data={ regional.chart }
 								mainKey="name"
 								dataKey="deaths"
-								stroke="#d9534f"
-								fill="#eb4034" />
+								stroke="#d9534f" />
 						</div>
 						<div className="column">
 							<LineChartComponent
 								data={ regional.chart }
 								mainKey="name"
 								dataKey="recovered"
-								stroke="#4bbf73"
-								fill="#3ac76b" />
+								stroke="#4bbf73" />
 						</div>
 					</div>
 				</div>
