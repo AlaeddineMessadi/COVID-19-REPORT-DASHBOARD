@@ -1,9 +1,19 @@
-const TileSmall = ({ title, value }) => {
+import Spinner from "./spinner";
+import { Fragment } from "react";
+
+const TileSmall = ({ title, value, isLoading }) => {
   return (
     <div className="tile is-parent">
       <article className="tile is-child box">
-        <p className="title">{ title }</p>
-        <p className="subtitle">{ value }</p>
+        {
+          isLoading ?
+            <Spinner /> :
+            <Fragment>
+              <p className="title">{ title }</p>
+              <p className="subtitle">{ value }</p>
+            </Fragment>
+        }
+
       </article>
     </div>
   )

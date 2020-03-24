@@ -21,9 +21,13 @@ export const formatNumber = (num) => {
 
 
 export const fatalityRate = (deaths, confirmed) => {
-  const result = parseFloat(((deaths / confirmed) * 100).toFixed(2))
+  const result = parseFloat(((deaths / confirmed) * 100).toFixed(2));
 
-  return typeof result === 'number' ? result : '-';
+  if (typeof result === 'number' && !isNaN(result)) {
+    return `${result} %`;
+  }
+
+  return '-';
 }
 
 export const capitalizeFirstLetter = (s) => {

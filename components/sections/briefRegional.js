@@ -1,11 +1,11 @@
-import TileElement from "../elements/tile";
-import { formatNumber, addFatalityRate, capitalizeFirstLetter } from "../../utils";
+import {
+  formatNumber,
+  addFatalityRate,
+  capitalizeFirstLetter
+} from "../../utils";
 import TileSmall from "../elements/tileSmall";
 
-const BriefRegional = ({ data = {} }) => {
-
-
-
+const BriefRegional = ({ data = {}, isLoading }) => {
   return (
     <div className="tile is-ancestor has-text-centered">
       {
@@ -14,7 +14,9 @@ const BriefRegional = ({ data = {} }) => {
             <TileSmall
               key={ i }
               title={ formatNumber(data[e]) }
-              value={ capitalizeFirstLetter(e) } />
+              value={ capitalizeFirstLetter(e) }
+              isLoading={ isLoading }
+            />
         )
       }
     </div>

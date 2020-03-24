@@ -14,6 +14,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 	})
 
 	const initialState = {
+		isLoading: false,
 		selected: 'us',
 		brief: {
 			confirmed: '-',
@@ -34,15 +35,16 @@ function IndexPage({ data, lastUpdate, countries }) {
 
 	const handleCountrySelection = async e => {
 		const { value: iso, label } = e;
+		setRegional({ ...regional, isLoading: true })
 		const { data } = await ApiManager.readLatest(iso);
 		const { confirmed, deaths, recovered } = data[0];
 
 		setRegional({
 			...regional,
+			isLoading: false,
 			selected: label,
 			brief: { confirmed, deaths, recovered }
 		});
-
 	}
 
 	return (
@@ -64,7 +66,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 					</div>
 					<br />
 
-					<BriefRegional data={ regional.brief } />
+					<BriefRegional data={ regional.brief } isLoading={ regional.isLoading } />
 				</div>
 			</section>
 		</Fragment>
