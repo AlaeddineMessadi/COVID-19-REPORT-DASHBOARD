@@ -33,11 +33,16 @@ function IndexPage({ data, lastUpdate, countries }) {
 
 
 	const handleCountrySelection = async e => {
-		const { value: iso } = e;
-		const response = await ApiManager.readBrief();
-		const response2 = await ApiManager.readLatest(iso);
-		console.log('response', response);
-		console.log('response', response2);
+		const { value: iso, label } = e;
+		const { data } = await ApiManager.readLatest(iso);
+		const { confirmed, deaths, recovered } = data[0];
+
+		setRegional({
+			...regional,
+			selected: label,
+			brief: { confirmed, deaths, recovered }
+		});
+
 	}
 
 	return (
