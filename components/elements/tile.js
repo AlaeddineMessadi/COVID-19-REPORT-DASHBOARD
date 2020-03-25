@@ -16,9 +16,11 @@ const TileElement = ({ title, value }) => {
           <div className="title">{ value }</div>
         </div>
         <div className="column">
-          {
-            types[title.toLowerCase()] ? types[title.toLowerCase()] : types.percentage
-          }
+          <span>
+            {
+              types[title.toLowerCase()] ? types[title.toLowerCase()] : types.percentage
+            }
+          </span>
         </div>
       </div>
 

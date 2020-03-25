@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import { endpoint } from './constants';
+import { returnLettersOnly } from '.';
 
 class ApiManager {
   static async readBrief() {
@@ -28,6 +29,9 @@ export default ApiManager;
 
 
 export const getIsoCode = async name => {
-  const response = await Axios.get(`https://restcountries.eu/rest/v2/name/${elm}?fullText=true`);
+  const response = await Axios.get(
+    `https://restcountries.eu/rest/v2/name/${returnLettersOnly(name)}?fullText=true`
+  );
+  console.log(response);
   return response.alpha2Code;
 }

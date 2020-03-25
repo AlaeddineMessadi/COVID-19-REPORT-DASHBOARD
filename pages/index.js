@@ -3,7 +3,7 @@ import React, { useEffect, Fragment, useState } from 'react'
 import Brief from '../components/sections/brief';
 import SectionTitle from '../components/sectionTitle';
 import { convertISODate, endpoint, parseLatestResponse } from '../utils';
-import ApiManager from '../utils/apiManager';
+import ApiManager, { getIsoCode } from '../utils/apiManager';
 import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
 import LineChartComponent from '../components/charts/lineChart'
@@ -44,7 +44,9 @@ function IndexPage({ data, lastUpdate, countries }) {
 
 	const handleCountrySelection = async e => {
 		const { value, label } = e;
-		const [iso, provincestate] = value.split('.');
+		let [iso, provincestate] = value.split('.');
+
+		if (!iso) iso = await getIsoCode(label);
 
 		setRegional({ ...regional, isLoading: true })
 		const { data: responseLatest } = await ApiManager.readLatest(iso, provincestate);
