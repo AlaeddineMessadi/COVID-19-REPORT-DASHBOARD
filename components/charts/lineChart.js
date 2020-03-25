@@ -13,7 +13,6 @@ const LineChartComponent = (props) => {
     keys = Object.keys(data[0]);
     keys.shift();
   }
-  // console.log(randomColor());
 
   return (
     <div className="box" style={ { padding: '15px 0 0 0' } } >
