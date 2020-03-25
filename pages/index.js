@@ -57,16 +57,12 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 		const { data: responseTimeSeries } = await ApiManager.readTimeseries(iso);
 		const { location = {}, timeseries = {} } = responseTimeSeries[0] || {};
 
-		// convert for linear charts
-		let result = []
-		Object.keys(timeseries).map(e => result.push({ name: e, ...timeseries[e] }));
-
 		setRegional({
 			...regional,
 			isLoading: false,
 			selected: label,
 			brief: { confirmed, deaths, recovered },
-			chart: result,
+			chart: parseToDataCharts(timeseries),
 			heatMap: []
 		});
 	}
@@ -110,7 +106,8 @@ IndexPage.getInitialProps = async (ctx) => {
 
 		let { data: briefTimeseries } = await ApiManager.readBriefTimeseries();
 
-		console.log(result);
+		briefTimeseries = parseToDataCharts(briefTimeseries);
+
 		return { brief, lastUpdate, countries, briefTimeseries }
 	} catch (error) {
 		console.error(error);

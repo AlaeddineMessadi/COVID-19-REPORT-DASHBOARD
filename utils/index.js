@@ -45,3 +45,10 @@ export const camelize = str => {
 }
 
 export const returnLettersOnly = str => str.match(/[a-zA-Z]+/g).join(' ');
+
+
+export const parseToDataCharts = source => {
+  let result = []
+  Object.keys(briefTimeseries).map(e => result.push({ name: e, ...briefTimeseries[e] }));
+  return result;
+}
