@@ -1,11 +1,12 @@
 import { LineChart, Line, AreaChart, Area, Brush, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { capitalizeFirstLetter } from "../../utils";
+import { COLORS } from "../../utils/constants";
 import randomColor from 'randomcolor';
 
 const LineChartComponent = (props) => {
   const {
     data = {}, brush = false, dataKey = '',
-    mainKey = "name", stroke = '#8884d8', fill = '#8884d8'
+    mainKey = "name", stroke = COLORS.confirmed, fill
   } = props;
 
   let keys = [];
@@ -26,8 +27,8 @@ const LineChartComponent = (props) => {
             <YAxis />
             <Tooltip />
             {
-              dataKey ? <Line type='monotone' dataKey={ dataKey } stroke={ stroke } />
-                : keys.map((e, i) => <Line key={ i } type='monotone' dataKey={ e } stroke={ randomColor() } />)
+              dataKey ? <Line type='monotone' dataKey={ dataKey } stroke={ stroke } fill={ fill } />
+                : keys.map((e, i) => <Line key={ i } type='monotone' dataKey={ e } stroke={ COLORS[e] } fill={ fill } />)
             }
 
             { brush && <Brush /> }

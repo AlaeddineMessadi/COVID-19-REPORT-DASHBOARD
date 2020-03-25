@@ -1,12 +1,5 @@
-// font-awesome
-// @import "../node_modules/font-awesome/css/font-awesome.css";
-// @import "fonts/fontawesome.scss";
-// @import "fonts/brands.scss";
-// @import "fonts/regular.scss";
-// @import "fonts/solid.scss";
-
 // import overridden variables
-@import "./yeti/variables.scss";
+@import "./lux/variables.scss";
 @import "variables.scss";
 
 // import bulma
@@ -16,7 +9,7 @@
 @import '../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css';
 
 // import overridden variables
-@import "./yeti/overrides.scss";
+@import "./lux/overrides.scss";
 
 //  import nprogress style
 @import "nprogress.scss";

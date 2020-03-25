@@ -5,7 +5,7 @@ import {
   camelize
 } from "../../utils";
 import TileSmall from "../elements/tileSmall";
-import { help } from "../../utils/constants";
+import { HELP } from "../../utils/constants";
 
 const BriefRegional = ({ data = {}, isLoading }) => {
   return (
@@ -18,7 +18,7 @@ const BriefRegional = ({ data = {}, isLoading }) => {
               title={ formatNumber(data[e]) }
               value={ capitalizeFirstLetter(e) }
               isLoading={ isLoading }
-              toolTip={ help[camelize(e)] }
+              toolTip={ HELP[camelize(e)] }
             />
         )
       }
