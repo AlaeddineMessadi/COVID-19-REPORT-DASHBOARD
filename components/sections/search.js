@@ -27,14 +27,29 @@ const formatGroupLabel = data => (
   </div>
 );
 
+const optionss = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawbe1rry', label: 'Strawberry' },
+  { value: 'strawber2ry', label: 'Strawberry' },
+  { value: 'strawberr3y', label: 'Strawberry' },
+  { value: 'straberry4', label: 'Strawberry' },
+  { value: '5strawberry', label: 'Strawberry' },
+  { value: 's6trawberry', label: 'Strawberry' },
+  { value: 'st7rawberry', label: 'Strawberry' },
+  { value: 'str8awberry', label: 'Strawberry' },
+  { value: 'stra9wberry', label: 'Strawberry' },
+  { value: 'straw0berry', label: 'Strawberry' },
+  { value: 'strawb8erry', label: 'Strawberry' },
+  { value: 'vanill06a', label: 'Vanilla' }
+]
+
 const InputSearch = ({ selected = 'US', options, onChange }) => {
 
   return <Select
     instanceId="country"
     placeholder="Search..."
-    defaultValue={ selected }
     options={ options }
-    formatGroupLabel={ formatGroupLabel }
+    // formatGroupLabel={ formatGroupLabel }
     onChange={ onChange }
   />
 }

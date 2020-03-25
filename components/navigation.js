@@ -15,6 +15,7 @@ const Navigation = (params) => {
   const [isActive, setIsActive] = useState(false)
 
   const toggleIsActive = value => {
+    console.log('Menu is clicked')
     if (typeof value === 'boolean') {
       setIsActive(value)
       return
@@ -45,11 +46,11 @@ const Navigation = (params) => {
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarmenu"
-            onClick={ toggleIsActive }
+            onClick={ e => toggleIsActive() }
           >
-            <span aria-hidden="true" onClick={ toggleIsActive } />
-            <span aria-hidden="true" onClick={ toggleIsActive } />
-            <span aria-hidden="true" onClick={ toggleIsActive } />
+            <span aria-hidden="true" onClick={ e => toggleIsActive() } />
+            <span aria-hidden="true" onClick={ e => toggleIsActive() } />
+            <span aria-hidden="true" onClick={ e => toggleIsActive() } />
           </a>
         </div>
 
@@ -61,7 +62,7 @@ const Navigation = (params) => {
             <a className="navbar-item"
               href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">Gihub</a>
             <Link href="/contact">
-              <a className="navbar-item" onClick={ toggleIsActive }>
+              <a className="navbar-item" onClick={ e => toggleIsActive() }>
                 Contact
 							</a>
             </Link>

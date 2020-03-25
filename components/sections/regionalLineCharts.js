@@ -1,6 +1,7 @@
 import LineChartComponent from "../charts/lineChart";
 
 const RegionalLineCharts = ({ data }) => {
+  console.log(data)
   return (<div className="columns is-multiline">
     <div className="column">
       <LineChartComponent

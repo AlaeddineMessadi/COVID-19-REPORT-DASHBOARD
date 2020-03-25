@@ -8,6 +8,11 @@ class ApiManager {
     return data;
   }
 
+  static async readBriefTimeseries() {
+    const { data } = await Axios.get(endpoint.getBrieTimeseriesUrl());
+    return data;
+  }
+
   static async readCountries() {
     const { data } = await Axios.get(endpoint.getCountriesUrl());
     return data;

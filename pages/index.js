@@ -10,7 +10,7 @@ import LineChartComponent from '../components/charts/lineChart'
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
 import Axios from 'axios';
 
-function IndexPage({ data, lastUpdate, countries }) {
+function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 	// console.log(countries)
 	useEffect(() => {
 		document.title = 'COVID-19-REPORT-DASHBOARD';
@@ -39,6 +39,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 				label: elm,
 				value: `${(iso2 || iso3)}${provincestate ? '.' + provincestate : ''}`    // incase iso2 undefined use iso3 | server handle both
 			}
+			console.log('!!!!!!!')
 		});
 
 
@@ -50,11 +51,11 @@ function IndexPage({ data, lastUpdate, countries }) {
 
 		setRegional({ ...regional, isLoading: true })
 		const { data: responseLatest } = await ApiManager.readLatest(iso, provincestate);
-		const { confirmed, deaths, recovered } = responseLatest[0];
+		const { confirmed = '-', deaths = '-', recovered = '-' } = responseLatest[0] || {};
 
 
 		const { data: responseTimeSeries } = await ApiManager.readTimeseries(iso);
-		const { location, timeseries } = responseTimeSeries[0];
+		const { location = {}, timeseries = {} } = responseTimeSeries[0] || {};
 
 		// convert for linear charts
 		let result = []
@@ -75,7 +76,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 			<section className="section">
 				<SectionTitle title="World Wide" subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' } />
 				<div className="container">
-					<Brief data={ data } />
+					<Brief data={ brief } />
 				</div>
 			</section>
 			<div className="container">
@@ -91,7 +92,7 @@ function IndexPage({ data, lastUpdate, countries }) {
 
 					<BriefRegional data={ regional.brief } isLoading={ regional.isLoading } />
 
-					{/* <RegionalLineCharts data={ regional.chart } /> */ }
+					<RegionalLineCharts data={ regional.chart } />
 				</div>
 			</section>
 		</Fragment>
@@ -104,18 +105,13 @@ function IndexPage({ data, lastUpdate, countries }) {
 IndexPage.getInitialProps = async (ctx) => {
 
 	try {
-		let { data, lastUpdate } = await ApiManager.readBrief();
+		let { data: brief, lastUpdate } = await ApiManager.readBrief();
 		let { countries } = await ApiManager.readCountries();
-		// let { lastUpdate: updateLatest, count, data: latestData } = await ApiManager.readLatest();
-		// let { latest: { lastUpdate, count, data: latestData } } = await ApiManager.readLatest();
 
-		// console.log(Object.values(latestData));
+		let { data: briefTimeseries } = await ApiManager.readBriefTimeseries();
 
-		// const { countryList } = latestData
-		// console.log(countryList)
-		// const response = message ? { data: {} } : { ...data };
-
-		return { data, lastUpdate, countries }
+		console.log(result);
+		return { brief, lastUpdate, countries, briefTimeseries }
 	} catch (error) {
 		console.error(error);
 		return { error: error }
