@@ -8,6 +8,7 @@ import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
 import BriefLineCharts from '../components/sections/briefLineCharts';
+import Map from '../components/charts/map';
 
 function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 	useEffect(() => {
@@ -71,6 +72,9 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 				<div className="container">
 					<Brief data={ brief } />
 					<BriefLineCharts data={ briefTimeseries } />
+				</div>
+				<div>
+					<Map />
 				</div>
 			</section>
 			<div className="container">

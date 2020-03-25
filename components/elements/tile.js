@@ -1,13 +1,6 @@
+import { ICONS } from "../../utils/constants";
 
-
-const types = {
-  confirmed: <i className="fas fa-hospital-alt is-size-3 is-pulled-right has-text-info"></i>,
-  deaths: <i className="fas fa-biohazard is-size-3 is-pulled-right has-text-danger"></i>,
-  recovered: <i className="fas fa-first-aid is-size-3 is-pulled-right has-text-success"></i>,
-  percentage: <i className="fas fa-percent is-size-3 is-pulled-right has-text-primary"></i>
-}
-
-const TileElement = ({ title, value }) => {
+const TileElement = ({ title, value, options }) => {
   return (
     <div className="box">
       <div className="columns is-mobile is-vcentered">
@@ -18,32 +11,27 @@ const TileElement = ({ title, value }) => {
         <div className="column">
           <span>
             {
-              types[title.toLowerCase()] ? types[title.toLowerCase()] : types.percentage
+              ICONS[title.toLowerCase()] ? ICONS[title.toLowerCase()] : ICONS.percentage
             }
           </span>
         </div>
       </div>
 
-      <div className="level is-mobile">
-        <div className="level-item">
-          <div className="">
-            <div className="heading">Last</div>
-            <div className="title is-5">250</div>
+      {
+        options && (
+          <div className="level is-mobile">
+            {
+              options.map((e, i) => <div key={ i }
+                className="level-item">
+                <div className="">
+                  <div className="heading">{ e.title }</div>
+                  <div className="title is-5">{ e.value }</div>
+                </div>
+              </div>)
+            }
           </div>
-        </div>
-        <div className="level-item">
-          <div className="">
-            <div className="heading">Overall</div>
-            <div className="title is-5">750</div>
-          </div>
-        </div>
-        <div className="level-item">
-          <div className="">
-            <div className="heading">Fatality Rate %</div>
-            <div className="title is-5">25%</div>
-          </div>
-        </div>
-      </div>
+        )
+      }
     </div>
   )
 }

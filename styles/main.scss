@@ -8,6 +8,9 @@
 @import '../node_modules/bulma-divider/dist/css/bulma-divider.min.css';
 @import '../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css';
 
+// import react maps
+@import "../node_modules/mapbox-gl/dist/mapbox-gl.css";
+
 // import overridden variables
 @import "./lux/overrides.scss";
 

@@ -14,6 +14,7 @@ const Brief = ({ data = {} }) => {
                 title={ e }
                 value={ formatNumber(data[e]) }
                 toolTip={ HELP[camelize(e)] }
+                options={ [{ title: 'last', value: '20' }] }
               />
             </div>
         )

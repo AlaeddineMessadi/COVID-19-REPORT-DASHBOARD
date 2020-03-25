@@ -1,7 +1,6 @@
 import { LineChart, Line, AreaChart, Area, Brush, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { capitalizeFirstLetter } from "../../utils";
 import { COLORS } from "../../utils/constants";
-import randomColor from 'randomcolor';
 
 const LineChartComponent = (props) => {
   const {
