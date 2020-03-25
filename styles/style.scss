@@ -3,6 +3,11 @@
   src: url(fonts/breamcatcher.ttf) format('truetype');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 // body {//   font-family: "Breamcatcher";
 //   background-image: url('/static/Bgasdsd.jpg');
 // }

@@ -59,8 +59,12 @@ const Navigation = (params) => {
           className={ `navbar-menu${isActive ? ' is-active' : ''}` }
         >
           <div className="navbar-end">
-            <a className="navbar-item"
-              href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">Gihub</a>
+            <Link href="/#regionl ">
+              <a className="navbar-item" onClick={ e => toggleIsActive() }>
+                Regions
+							</a>
+            </Link>
+            <a className="navbar-item" href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">Gihub</a>
             <Link href="/contact">
               <a className="navbar-item" onClick={ e => toggleIsActive() }>
                 Contact

@@ -9,9 +9,6 @@ import InputSearch from '../components/sections/search';
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
 import BriefLineCharts from '../components/sections/briefLineCharts';
 import dynamic from 'next/dynamic';
-// import Map from '../components/charts/map';
-// import HeatMap from '../components/charts/heatmap';
-// import StikyHeatMap from '../components/charts/stikyHeatMap';
 
 const StikyHeatMap = dynamic(() => import('../components/charts/stikyHeatMap'), { ssr: false })
 
@@ -93,8 +90,6 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 				</div>
 				<div className="section">
 					<div className="grid" style={ { minHeight: "300px" } }>
-						{/* <Map /> */ }
-						{/* <HeatMap /> */ }
 						<StikyHeatMap
 							pointList={ parsePointList(latest) }
 						/>
@@ -104,7 +99,7 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 			<div className="container">
 				<div className="is-divider" data-content="Analytics"></div>
 			</div>
-			<section className="section">
+			<section className="section" id="regionl">
 				<SectionTitle title="Regional" subtitle="Select Country/Region" />
 				<div className="container">
 					<div className="section" >
