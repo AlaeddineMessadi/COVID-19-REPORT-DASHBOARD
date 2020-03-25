@@ -8,9 +8,14 @@ import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
 import BriefLineCharts from '../components/sections/briefLineCharts';
-import Map from '../components/charts/map';
+import dynamic from 'next/dynamic';
+// import Map from '../components/charts/map';
+// import HeatMap from '../components/charts/heatmap';
+// import StikyHeatMap from '../components/charts/stikyHeatMap';
 
-function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
+const StikyHeatMap = dynamic(() => import('../components/charts/stikyHeatMap'), { ssr: false })
+
+function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 	useEffect(() => {
 		document.title = 'COVID-19-REPORT-DASHBOARD';
 	})
@@ -29,6 +34,19 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 	/** Declare and Initialize Regional state */
 	const [regional, setRegional] = useState(initialState);
 
+
+	/** Prepare PointList for Map  */
+	const parsePointList = (data) => Object.values(data).map(
+		(countryLatest) => {
+			return {
+				geometry: [
+					countryLatest.location.lng,
+					countryLatest.location.lat,
+				],
+				weight: Math.min(countryLatest.confirmed / 20, 1.0),
+			};
+		}
+	);
 
 	/** Prepare Select options  */
 	const countriesOption = Object.keys(countries)
@@ -73,8 +91,14 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 					<Brief data={ brief } />
 					<BriefLineCharts data={ briefTimeseries } />
 				</div>
-				<div>
-					<Map />
+				<div className="section box is-shadowless">
+					<div className="container">
+						{/* <Map /> */ }
+						{/* <HeatMap /> */ }
+						<StikyHeatMap
+							pointList={ parsePointList(latest) }
+						/>
+					</div>
 				</div>
 			</section>
 			<div className="container">
@@ -106,10 +130,13 @@ IndexPage.getInitialProps = async (ctx) => {
 		let { countries } = await ApiManager.readCountries();
 
 		let { data: briefTimeseries } = await ApiManager.readBriefTimeseries();
+		let { data: latest } = await ApiManager.readLatest();
+
+		// console.log(latest)
 
 		briefTimeseries = parseToDataCharts(briefTimeseries);
 
-		return { brief, lastUpdate, countries, briefTimeseries }
+		return { brief, lastUpdate, countries, briefTimeseries, latest }
 	} catch (error) {
 		console.error(error);
 		return { error: error }
