@@ -20,7 +20,7 @@ const LineChartComponent = (props) => {
       <div style={ { width: '100%', height: 300, padding: '1.25rem' } }>
         <ResponsiveContainer>
           <LineChart data={ data }
-            margin={ { top: 5, right: 30, left: 0, bottom: 0 } }>
+            margin={ { top: 5, right: 30, left: 3, bottom: 0 } }>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey={ mainKey } />
             <YAxis />

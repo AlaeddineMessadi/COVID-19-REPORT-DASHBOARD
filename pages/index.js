@@ -89,7 +89,7 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 					<BriefLineCharts data={ briefTimeseries } />
 				</div>
 				<div className="section">
-					<div className="grid" style={ { minHeight: "300px" } }>
+					<div className="container grid" style={ { minHeight: "300px" } }>
 						<StikyHeatMap
 							pointList={ parsePointList(latest) }
 						/>

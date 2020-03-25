@@ -64,6 +64,11 @@ const Navigation = (params) => {
                 Regions
 							</a>
             </Link>
+            <Link href="/datatable ">
+              <a className="navbar-item" onClick={ e => toggleIsActive() }>
+                DataTable
+							</a>
+            </Link>
             <a className="navbar-item" href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">Gihub</a>
             <Link href="/contact">
               <a className="navbar-item" onClick={ e => toggleIsActive() }>
