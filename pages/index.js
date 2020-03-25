@@ -91,8 +91,8 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 					<Brief data={ brief } />
 					<BriefLineCharts data={ briefTimeseries } />
 				</div>
-				<div className="section box is-shadowless">
-					<div className="container">
+				<div className="section">
+					<div className="grid" style={ { minHeight: "300px" } }>
 						{/* <Map /> */ }
 						{/* <HeatMap /> */ }
 						<StikyHeatMap

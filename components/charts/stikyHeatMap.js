@@ -2,7 +2,7 @@ import { HeatMap } from '@stickyboard/openlayers';
 
 
 const StikyHeatMap = ({ pointList }) => {
-  return <div className="box is-shadowless">
+  return <div className="grid-xl ">
     <HeatMap
       zoom={ 3 }
       minZoom={ 2 }
