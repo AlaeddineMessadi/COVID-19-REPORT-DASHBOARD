@@ -2,3 +2,4 @@
 /.next
 /.vscode
 .now
+.env
