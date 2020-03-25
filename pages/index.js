@@ -2,16 +2,14 @@ import React, { useEffect, Fragment, useState } from 'react'
 
 import Brief from '../components/sections/brief';
 import SectionTitle from '../components/sectionTitle';
-import { convertISODate, endpoint, parseLatestResponse } from '../utils';
+import { convertISODate, parseToDataCharts } from '../utils';
 import ApiManager, { getIsoCode } from '../utils/apiManager';
 import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
-import LineChartComponent from '../components/charts/lineChart'
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
-import Axios from 'axios';
+import BriefLineCharts from '../components/sections/briefLineCharts';
 
 function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
-	// console.log(countries)
 	useEffect(() => {
 		document.title = 'COVID-19-REPORT-DASHBOARD';
 	})
@@ -34,12 +32,11 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 	/** Prepare Select options  */
 	const countriesOption = Object.keys(countries)
 		.map(elm => {
-			const { provincestate, countrycode: { iso2 = '', iso3 = '' } = {} } = countries[elm];
+			const { provincestate, countrycode: { iso2 = '', iso3 = '' } = {} } = countries[elm] = {};
 			return {
 				label: elm,
 				value: `${(iso2 || iso3)}${provincestate ? '.' + provincestate : ''}`    // incase iso2 undefined use iso3 | server handle both
 			}
-			console.log('!!!!!!!')
 		});
 
 
@@ -73,6 +70,7 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 				<SectionTitle title="World Wide" subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' } />
 				<div className="container">
 					<Brief data={ brief } />
+					<BriefLineCharts data={ briefTimeseries } />
 				</div>
 			</section>
 			<div className="container">
@@ -99,7 +97,6 @@ function IndexPage({ brief, lastUpdate, countries, briefTimeseries }) {
 
 
 IndexPage.getInitialProps = async (ctx) => {
-
 	try {
 		let { data: brief, lastUpdate } = await ApiManager.readBrief();
 		let { countries } = await ApiManager.readCountries();

@@ -8,7 +8,6 @@ export const convertISODate = isoDate => {
   if (month < 10) { month = '0' + month; }
 
   const result = `${dt} - ${month} - ${year}  |  ${date.getUTCHours()}:${date.getUTCMinutes()}`;
-
   return result;
 }
 
@@ -23,7 +22,6 @@ export const fatalityRate = (deaths, confirmed) => {
   if (typeof result === 'number' && !isNaN(result)) {
     return `${result} %`;
   }
-
   return '-';
 }
 
@@ -49,6 +47,8 @@ export const returnLettersOnly = str => str.match(/[a-zA-Z]+/g).join(' ');
 
 export const parseToDataCharts = source => {
   let result = []
-  Object.keys(briefTimeseries).map(e => result.push({ name: e, ...briefTimeseries[e] }));
+  Object.keys(source).map(
+    e => result.push({ name: e, ...source[e] })
+  );
   return result;
 }
