@@ -6,7 +6,7 @@
 // @import "fonts/solid.scss";
 
 // import overridden variables
-@import "./lux/variables.scss";
+@import "./yeti/variables.scss";
 @import "variables.scss";
 
 // import bulma
@@ -16,7 +16,7 @@
 @import '../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css';
 
 // import overridden variables
-@import "./lux/overrides.scss";
+@import "./yeti/overrides.scss";
 
 //  import nprogress style
 @import "nprogress.scss";

@@ -4,7 +4,7 @@ import randomColor from 'randomcolor';
 
 const LineChartComponent = (props) => {
   const {
-    data = {}, withBush: brush = false, dataKey = '',
+    data = {}, brush = false, dataKey = '',
     mainKey = "name", stroke = '#8884d8', fill = '#8884d8'
   } = props;
 
