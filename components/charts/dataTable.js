@@ -54,6 +54,7 @@ const DataTableComponent = ({ options, latest }) => {
       striped
       entries={ 100 }
       order={ ['confirmed', 'desc'] }
+      tbodyColor="has-background-white"
       data={ { columns, rows } } />
   );
 }

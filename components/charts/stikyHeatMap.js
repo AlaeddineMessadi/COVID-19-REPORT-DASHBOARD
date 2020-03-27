@@ -9,8 +9,8 @@ const StikyHeatMap = ({ pointList }) => {
       maxZoom={ 17 }
       blur={ 40 }
       radius={ 30 }
-      longitude={ 127.024792 }
-      latitude={ 37.504296 }
+      longitude={ 12 }
+      latitude={ 43 }
       pointList={ pointList }
     />
   </div>

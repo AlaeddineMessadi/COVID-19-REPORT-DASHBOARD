@@ -54,7 +54,6 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 				value: `${(iso2 || iso3)}${provincestate ? '.' + provincestate : ''}`    // incase iso2 undefined use iso3 | server handle both
 			}
 		});
-	console.log(countries);
 
 	const handleCountrySelection = async e => {
 		const { value, label } = e;
@@ -140,8 +139,6 @@ IndexPage.getInitialProps = async (ctx) => {
 
 		let { data: briefTimeseries } = await ApiManager.readBriefTimeseries();
 		let { data: latest } = await ApiManager.readLatest();
-
-		// console.log(latest)
 
 		briefTimeseries = parseToDataCharts(briefTimeseries);
 

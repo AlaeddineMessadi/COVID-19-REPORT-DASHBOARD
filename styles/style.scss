@@ -8,9 +8,10 @@ html {
 }
 
 
-// body {//   font-family: "Breamcatcher";
-//   background-image: url('/static/Bgasdsd.jpg');
-// }
+body {
+  //   font-family: "Breamcatcher";
+  // background-image: url('/static/Bgasdsd.jpg');
+}
 
 .grid {
   display: grid;
@@ -115,6 +116,9 @@ html {
   cursor: pointer;
 }
 
+// .navbar-brand {
+  //   width: 100%;
+  // }
 
 .dataTables_length {
   text-align: right;
