@@ -6,7 +6,7 @@
   "author": "Alaeddine Messadi <alaeddine.messadi@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "start": "next",
     "dev:debug": "now dev --debug",
     "build": "next build",
     "eslint": "eslint '**/*.js'",
