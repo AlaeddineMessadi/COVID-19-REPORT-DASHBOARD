@@ -4,14 +4,16 @@ const TileElement = ({ title, value, options }) => {
   return (
     <div className="box">
       <div className="columns is-mobile is-vcentered">
-        <div className="column">
+        <div className="column is-8">
           <div className="heading">{ title }</div>
           <div className="title">{ value }</div>
         </div>
         <div className="column">
           <span>
             {
-              ICONS[title.toLowerCase()] ? ICONS[title.toLowerCase()] : ICONS.percentage
+              ICONS[title.toLowerCase()] ?
+                ICONS[title.toLowerCase()] :
+                ICONS.percentage
             }
           </span>
         </div>

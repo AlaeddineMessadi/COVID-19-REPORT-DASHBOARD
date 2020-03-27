@@ -7,7 +7,7 @@ export const convertISODate = isoDate => {
   if (dt < 10) { dt = '0' + dt; }
   if (month < 10) { month = '0' + month; }
 
-  const result = `${dt} - ${month} - ${year}  |  ${date.getUTCHours()}:${date.getUTCMinutes()}`;
+  const result = `${dt} - ${month} - ${year}  |  ${date.toTimeString().slice(0, 5)}`;
   return result;
 }
 
@@ -16,11 +16,11 @@ export const formatNumber = (num) => {
 }
 
 
-export const fatalityRate = (deaths, confirmed) => {
+export const fatalityRate = (deaths, confirmed, isWithSign = true) => {
   const result = parseFloat(((deaths / confirmed) * 100).toFixed(2));
 
   if (typeof result === 'number' && !isNaN(result)) {
-    return `${result} %`;
+    return `${result}${isWithSign ? ' %' : ''}`;
   }
   return '-';
 }
@@ -30,9 +30,9 @@ export const capitalizeFirstLetter = (s) => {
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-export const addFatalityRate = data => {
+export const addFatalityRate = (data, isWithSign) => {
   let mutatedData = data;
-  mutatedData['Fatality Rate'] = fatalityRate(data.deaths, data.confirmed);
+  mutatedData['Fatality Rate'] = fatalityRate(data.deaths, data.confirmed, isWithSign);
   return mutatedData;
 }
 

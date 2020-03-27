@@ -18,8 +18,8 @@ class ApiManager {
     return data;
   }
 
-  static async readLatest(iso, province) {
-    const { data } = await Axios.get(endpoint.getLatestUrl(), { params: { iso, province } }
+  static async readLatest(iso, province, onlyCountries) {
+    const { data } = await Axios.get(endpoint.getLatestUrl(), { params: { iso, province, onlyCountries } }
     );
     return data;
   }

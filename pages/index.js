@@ -48,13 +48,13 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 	/** Prepare Select options  */
 	const countriesOption = Object.keys(countries)
 		.map(elm => {
-			const { provincestate, countrycode: { iso2 = '', iso3 = '' } = {} } = countries[elm] = {};
+			const { provincestate, countrycode: { iso2 = '', iso3 = '' } = {} } = countries[elm];
 			return {
 				label: elm,
 				value: `${(iso2 || iso3)}${provincestate ? '.' + provincestate : ''}`    // incase iso2 undefined use iso3 | server handle both
 			}
 		});
-
+	console.log(countries);
 
 	const handleCountrySelection = async e => {
 		const { value, label } = e;
@@ -82,8 +82,15 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 
 	return (
 		<Fragment>
+			<div className="hero is-medium is-primary">
+				<div className="hero-body">
+					<SectionTitle
+						title="World Wide"
+						subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' }
+					/>
+				</div>
+			</div>
 			<section className="section">
-				<SectionTitle title="World Wide" subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' } />
 				<div className="container">
 					<Brief data={ brief } />
 					<BriefLineCharts data={ briefTimeseries } />
@@ -99,11 +106,18 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 			<div className="container">
 				<div className="is-divider" data-content="Analytics"></div>
 			</div>
+			<div className="hero is-medium is-primary">
+				<div className="hero-body">
+					<SectionTitle title="Regional" subtitle="Select Country/Region" />
+				</div>
+			</div>
 			<section className="section" id="regionl">
-				<SectionTitle title="Regional" subtitle="Select Country/Region" />
 				<div className="container">
 					<div className="section" >
-						<InputSearch selected={ regional.selected } options={ countriesOption } onChange={ handleCountrySelection } />
+						<InputSearch
+							selected={ regional.selected }
+							options={ countriesOption }
+							onChange={ handleCountrySelection } />
 					</div>
 					<br />
 

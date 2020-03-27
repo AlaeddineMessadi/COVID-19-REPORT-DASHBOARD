@@ -116,6 +116,10 @@ html {
 }
 
 
+.dataTables_length {
+  text-align: right;
+}
+
 @media (max-width: 1024px) {
   .desktop {
     display: none;

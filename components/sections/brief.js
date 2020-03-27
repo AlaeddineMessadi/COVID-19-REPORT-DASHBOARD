@@ -7,7 +7,7 @@ const Brief = ({ data = {} }) => {
   return (
     <div className="columns">
       {
-        Object.keys(addFatalityRate(data)).map(
+        Object.keys(addFatalityRate(data, false)).map(
           (e, i) =>
             <div key={ i } className="column">
               <TileElement
