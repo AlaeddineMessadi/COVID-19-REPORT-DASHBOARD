@@ -2,20 +2,15 @@ import dynamic from 'next/dynamic';
 import SectionTitle from '../components/sectionTitle';
 import ApiManager from '../utils/apiManager';
 import { convertISODate } from '../utils';
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment } from 'react';
 
 
 
 const DataTablePage = ({ lastUpdate, latest }) => {
-  const [loading, setLoading] = useState();
-
-
   const DataTable = dynamic(async () => {
     const Component = await import('../components/charts/dataTable');
     return Component;
   }, { ssr: false })
-
-  useEffect
 
   return (
     <Fragment>
@@ -32,7 +27,6 @@ const DataTablePage = ({ lastUpdate, latest }) => {
             latest={ latest } />
         </div>
       </div>
-
     </Fragment>
   );
 }
@@ -40,11 +34,9 @@ const DataTablePage = ({ lastUpdate, latest }) => {
 
 DataTablePage.getInitialProps = async (ctx) => {
   try {
-    let { data: briefTimeseries } = await ApiManager.readBriefTimeseries(null, null, true);
     let { data: latest, lastUpdate } = await ApiManager.readLatest(null, null, true);
 
-
-    return { lastUpdate, latest, briefTimeseries }
+    return { lastUpdate, latest }
   } catch (error) {
     console.error(error);
     return { error: error }
