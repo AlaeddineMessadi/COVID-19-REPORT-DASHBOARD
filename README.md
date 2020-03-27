@@ -4,7 +4,7 @@ COVID-19 daily report dashboard of all cases worldwide
 [Preview](https://covid-19-two-blush.now.sh/)
 
 <div align="center">
-	<br> <img src="/public/static/favicon-32x32.png" width="80px"> <br> <hr>
+	<br> <img src="/public/favicon-32x32.png" width="80px"> <br> <hr>
 </div>
 
 
