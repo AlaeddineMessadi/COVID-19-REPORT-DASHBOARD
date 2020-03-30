@@ -1,5 +1,5 @@
 // import overridden variables
-@import "./lux/variables.scss";
+@import "./sh/variables.scss";
 @import "variables.scss";
 
 // import bulma
@@ -15,7 +15,7 @@
 @import "../node_modules/mapbox-gl/dist/mapbox-gl.css";
 
 // import overridden variables
-@import "./lux/overrides.scss";
+@import "./sh/overrides.scss";
 
 //  import nprogress style
 @import "nprogress.scss";

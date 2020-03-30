@@ -23,14 +23,14 @@ export default class Layout extends Document {
 					<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 					<link rel="manifest" href="/site.webmanifest" />
 				</Head>
-				<Navigation />
+
 
 				<Main />
 
 				<FooterSection
-					description="CoronaVirus"
-					url="#"
-					urlTitle="Dashboard"
+					description="stats-coronaVirus.com "
+					url="https://almessadi.com"
+					urlTitle=" made with love by <3"
 				/>
 				<NextScript />
 				<script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js"></script>

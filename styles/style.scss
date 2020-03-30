@@ -94,10 +94,17 @@ body {
   margin-bottom: 0 !important;
 }
 
+.no-margin {
+  margin: 0 !important;
+}
+
 .margin-bottom {
   margin-bottom: 30px !important;
 }
 
+.navbar-burger.burger {
+  width: 13px;
+}
 
 .is-transparent {
   background-color: transparent;
@@ -117,8 +124,8 @@ body {
 }
 
 // .navbar-brand {
-  //   width: 100%;
-  // }
+//   width: 100%;
+// }
 
 .dataTables_length {
   text-align: right;

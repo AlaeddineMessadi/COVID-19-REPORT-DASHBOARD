@@ -3,6 +3,7 @@ import SectionTitle from '../components/sectionTitle';
 import ApiManager from '../utils/apiManager';
 import { convertISODate } from '../utils';
 import { Fragment } from 'react';
+import Navigation from '../components/navigation';
 
 
 
@@ -14,6 +15,8 @@ const DataTablePage = ({ lastUpdate, latest }) => {
 
   return (
     <Fragment>
+      <Navigation />
+
       <div className="hero is-medium is-primary">
         <div className="hero-body">
           <SectionTitle

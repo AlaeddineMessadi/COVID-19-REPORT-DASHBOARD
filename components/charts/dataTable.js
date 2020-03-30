@@ -7,25 +7,25 @@ const DataTableComponent = ({ options, latest }) => {
   // DESC asc
   const columns = [
     {
-      label: 'Country', field: 'country', sort: 'asc', width: 200
+      label: 'Country', field: 'country', sort: 'asc',
     },
     {
-      label: 'Confirmed', field: 'confirmed', sort: 'asc', width: 100, attributes: {
+      label: 'Confirmed', field: 'confirmed', sort: 'asc', width: 150, attributes: {
         "className": "has-background-info"
       }
     },
     {
-      label: 'Deaths', field: 'deaths', sort: 'asc', width: 100, attributes: {
+      label: 'Deaths', field: 'deaths', sort: 'asc', width: 150, attributes: {
         "className": "has-background-danger"
       }
     },
     {
-      label: 'Recovered', field: 'recovered', sort: 'asc', width: 100, attributes: {
+      label: 'Recovered', field: 'recovered', sort: 'asc', width: 150, attributes: {
         "className": "has-background-success"
       }
     },
     {
-      label: 'Fatality Rate', field: 'fatalityRate', sort: 'asc', width: 100, attributes: {
+      label: 'Fatality Rate', field: 'fatalityRate', sort: 'asc', width: 150, attributes: {
         "className": "has-background-waring",
         "data-tooltip": "Fatility rate"
       }
@@ -50,7 +50,9 @@ const DataTableComponent = ({ options, latest }) => {
       barReverse
       btn
       fixed
+      scrollX
       searching
+      // autoWidth
       striped
       entries={ 100 }
       order={ ['confirmed', 'desc'] }

@@ -70,7 +70,7 @@ const Navigation = (params) => {
 							</a>
             </Link>
             <a className="navbar-item" href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">Gihub</a>
-            <Link href="/contact">
+            <Link href="/about">
               <a className="navbar-item" onClick={ e => toggleIsActive() }>
                 Contact
 							</a>

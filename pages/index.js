@@ -9,6 +9,7 @@ import InputSearch from '../components/sections/search';
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
 import BriefLineCharts from '../components/sections/briefLineCharts';
 import dynamic from 'next/dynamic';
+import Navigation from '../components/navigation';
 
 const StikyHeatMap = dynamic(() => import('../components/charts/stikyHeatMap'), { ssr: false })
 
@@ -81,6 +82,7 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 
 	return (
 		<Fragment>
+			<Navigation />
 			<div className="hero is-medium is-primary">
 				<div className="hero-body">
 					<SectionTitle
@@ -103,7 +105,7 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 				</div>
 			</section>
 			<div className="container">
-				<div className="is-divider" data-content="Analytics"></div>
+				<div className="is-divider no-margin" data-content="Analytics"></div>
 			</div>
 			<div className="hero is-medium is-primary">
 				<div className="hero-body">
