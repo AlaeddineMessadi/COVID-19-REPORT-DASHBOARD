@@ -1,13 +1,13 @@
 import { HeatMap } from '@stickyboard/openlayers';
 
 
-const StikyHeatMap = ({ pointList }) => {
+const StickyHeatMap = ({ pointList }) => {
   return <div className="grid-xl ">
     <HeatMap
       zoom={ 5 }
       minZoom={ 2 }
-      maxZoom={ 17 }
-      blur={ 40 }
+      maxZoom={ 8 }
+      blur={ 30 }
       radius={ 30 }
       longitude={ 12 }
       latitude={ 43 }
@@ -16,4 +16,4 @@ const StikyHeatMap = ({ pointList }) => {
   </div>
 }
 
-export default StikyHeatMap;
+export default StickyHeatMap;
