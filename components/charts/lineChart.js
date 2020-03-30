@@ -27,7 +27,7 @@ const LineChartComponent = (props) => {
             <Tooltip />
             {
               dataKey ? <Line type='monotone' dataKey={ dataKey } stroke={ stroke } fill={ fill } />
-                : keys.map((e, i) => <Line key={ i } type='monotone' dataKey={ e } stroke={ COLORS[e] } fill={ fill } />)
+                : keys.map((e, i) => <Line key={ i } type='monotone' dataKey={ e } stroke={ COLORS[e] } fill={ COLORS[e] } />)
             }
 
             { brush && <Brush /> }

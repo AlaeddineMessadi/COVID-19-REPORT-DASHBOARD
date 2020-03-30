@@ -7,7 +7,7 @@ const StickyHeatMap = ({ pointList }) => {
       zoom={ 5 }
       minZoom={ 2 }
       maxZoom={ 8 }
-      blur={ 30 }
+      blur={ 40 }
       radius={ 30 }
       longitude={ 12 }
       latitude={ 43 }

@@ -52,11 +52,10 @@ const DataTableComponent = ({ options, latest }) => {
       fixed
       scrollX
       searching
-      // autoWidth
       striped
       entries={ 100 }
       order={ ['confirmed', 'desc'] }
-      tbodyColor="has-background-white"
+      tbodyColor="has-background-white has-text-black"
       data={ { columns, rows } } />
   );
 }

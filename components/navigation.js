@@ -15,7 +15,6 @@ const Navigation = (params) => {
   const [isActive, setIsActive] = useState(false)
 
   const toggleIsActive = value => {
-    console.log('Menu is clicked')
     if (typeof value === 'boolean') {
       setIsActive(value)
       return
@@ -36,7 +35,7 @@ const Navigation = (params) => {
               className="navbar-item is-unselectable"
               onClick={ e => toggleIsActive(false) }
             >
-              <strong className="is-3">CoronaVirus</strong>
+              <strong className="is-3">Stats-CoronaVirus</strong>
             </a>
           </Link>
 

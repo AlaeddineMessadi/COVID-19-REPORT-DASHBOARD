@@ -23,6 +23,7 @@ function Contact({ children, id = "contact" }) {
                 and also recognized the difficulty to gather data for in-depth analysis through various other sources of scattered
                 data on different news portals as well as in different languages.
               </p>
+              <br />
               <p>STATS-CORONAVIRUS.com is composed by two separate standalone projects.</p>
               <p>The first <a href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-API">@COVID-19-REPORT-API</a> is the server part
               of the website which is an API Service that keep tracking cases worldwide using the data source repository
@@ -30,6 +31,8 @@ function Contact({ children, id = "contact" }) {
 
               <p>The second project <a href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD">@COVID-19-REPORT-DASHBOARD</a> is the client side
                 which consume the api's endpoints and render received data in the page</p>
+              <br />
+
               <p>
                 If you are a Developer, Designer, Writer you just have an idea and you want to contribute, please get in touch with the email bellow
               </p>

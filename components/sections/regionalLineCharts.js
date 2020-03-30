@@ -8,21 +8,25 @@ const RegionalLineCharts = ({ data }) => {
       <LineChartComponent
         data={ data }
         mainKey="name"
-        dataKey="confirmed" />
+        dataKey="confirmed"
+        stroke={ COLORS.confirmed }
+        fill={ COLORS.confirmed } />
     </div>
     <div className="column">
       <LineChartComponent
         data={ data }
         mainKey="name"
         dataKey="deaths"
-        stroke={ COLORS.deaths } />
+        stroke={ COLORS.deaths }
+        fill={ COLORS.deaths } />
     </div>
     <div className="column">
       <LineChartComponent
         data={ data }
         mainKey="name"
         dataKey="recovered"
-        stroke={ COLORS.recovered } />
+        stroke={ COLORS.recovered }
+        fill={ COLORS.recovered } />
     </div>
   </div>);
 }

@@ -114,11 +114,19 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 			</div>
 			<section className="section" id="regional">
 				<div className="container">
-					<div className="section" >
+					<div className="section has-text-black" >
 						<InputSearch
 							selected={ regional.selected }
 							options={ countriesOption }
 							onChange={ handleCountrySelection } />
+
+						{
+							!regional.selected ?
+								<div className="notification is-primary">
+									<button className="delete" onClick={ e => setRegional({ ...regional, selected: true }) }></button>
+									Please select your the region
+								</div> : ''
+						}
 					</div>
 					<br />
 

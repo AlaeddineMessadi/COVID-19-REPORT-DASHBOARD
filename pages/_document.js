@@ -28,9 +28,9 @@ export default class Layout extends Document {
 				<Main />
 
 				<FooterSection
-					description="stats-coronaVirus.com "
+					description={ ` © ${new Date().getFullYear()} - Made with by ` }
 					url="https://almessadi.com"
-					urlTitle=" made with love by <3"
+					urlTitle=" ALMESSADI"
 				/>
 				<NextScript />
 				<script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js"></script>
