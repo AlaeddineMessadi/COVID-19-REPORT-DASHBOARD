@@ -24,11 +24,11 @@ const Navigation = (params) => {
 
   return (
     <nav
-      className="navbar is-primary"
+      className="navbar is-primary section"
       role="navigation"
       aria-label="main navigation"
     >
-      <div className="container">
+      <div className="container has-background-primary">
         <div className="navbar-brand">
           <Link href="/">
             <a

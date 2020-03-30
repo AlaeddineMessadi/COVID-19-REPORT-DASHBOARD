@@ -28,7 +28,7 @@ export default class Layout extends Document {
 				<Main />
 
 				<FooterSection
-					description={ ` © ${new Date().getFullYear()} - Made with by ` }
+					description={ ` © ${new Date().getFullYear()} - Made by ` }
 					url="https://almessadi.com"
 					urlTitle=" ALMESSADI"
 				/>
