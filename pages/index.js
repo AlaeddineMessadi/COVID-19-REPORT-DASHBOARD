@@ -112,7 +112,7 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 					<SectionTitle title="Regional" subtitle="Select Country/Region" />
 				</div>
 			</div>
-			<section className="section" id="regionl">
+			<section className="section" id="regional">
 				<div className="container">
 					<div className="section" >
 						<InputSearch

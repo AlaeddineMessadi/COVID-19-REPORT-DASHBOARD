@@ -4,7 +4,7 @@ import { HeatMap } from '@stickyboard/openlayers';
 const StikyHeatMap = ({ pointList }) => {
   return <div className="grid-xl ">
     <HeatMap
-      zoom={ 3 }
+      zoom={ 5 }
       minZoom={ 2 }
       maxZoom={ 17 }
       blur={ 40 }

@@ -59,7 +59,7 @@ const Navigation = (params) => {
           className={ `navbar-menu${isActive ? ' is-active' : ''}` }
         >
           <div className="navbar-end">
-            <Link href="/#regionl ">
+            <Link href="/#regional">
               <a className="navbar-item" onClick={ e => toggleIsActive() }>
                 Regions
 							</a>
