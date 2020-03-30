@@ -69,10 +69,19 @@ const Navigation = (params) => {
                 DataTable
 							</a>
             </Link>
-            <a className="navbar-item" href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">Gihub</a>
+            <Link href="/news">
+              <a className="navbar-item" onClick={ e => toggleIsActive() }>
+                News
+							</a>
+            </Link>
+            <Link href="/faq">
+              <a className="navbar-item" onClick={ e => toggleIsActive() }>
+                FAQ
+							</a>
+            </Link>
             <Link href="/about">
               <a className="navbar-item" onClick={ e => toggleIsActive() }>
-                Contact
+                About
 							</a>
             </Link>
           </div>
