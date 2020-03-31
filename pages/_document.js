@@ -25,8 +25,6 @@ export default class Layout extends Document {
 
 	render() {
 		const { isProduction } = this.props;
-		// GA.init();
-
 		return (
 			<Html lang="en">
 				<Head>
@@ -49,7 +47,7 @@ export default class Layout extends Document {
 				<NextScript />
 				<script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js"></script>
 
-				{ true && (
+				{ isProduction && (
 					<Fragment>
 						<script
 							async
@@ -63,5 +61,3 @@ export default class Layout extends Document {
 		)
 	}
 }
-
-// UA - 48019163 - 11
