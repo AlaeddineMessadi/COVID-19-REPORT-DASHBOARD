@@ -11,7 +11,9 @@
     "build": "next build",
     "eslint": "eslint '**/*.js'",
     "eslint:fix": "eslint '**/*.js' --fix",
-    "prettier": "prettier --write '**/*.js'"
+    "prettier": "prettier --write '**/*.js'",
+    "prod": "now --prod -e APILIST_TOKEN=@apilist_token",
+    "deploy": "now -e APILIST_TOKEN=@apilist_token"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.8",

@@ -4,14 +4,15 @@ import ApiManager from '../utils/apiManager';
 import { convertISODate } from '../utils';
 import { Fragment } from 'react';
 import Navigation from '../components/navigation';
+import DataTable from '../components/charts/dataTable';
 
 
 
 const CountriesPage = ({ lastUpdate, latest }) => {
-  const DataTable = dynamic(async () => {
-    const Component = await import('../components/charts/dataTable');
-    return Component;
-  }, { ssr: false })
+  // const DataTable = dynamic(async () => {
+  //   const Component = await import('../components/charts/dataTable');
+  //   return Component;
+  // }, { ssr: false })
 
   return (
     <Fragment>
