@@ -1,4 +1,3 @@
-// import { MDBDataTable } from 'mdbreact';
 import { fatalityRate } from '../../utils';
 import MaterialTable from 'material-table';
 import { COLORS } from '../../utils/constants';

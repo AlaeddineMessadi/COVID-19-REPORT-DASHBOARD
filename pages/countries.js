@@ -9,11 +9,6 @@ import DataTable from '../components/charts/dataTable';
 
 
 const CountriesPage = ({ lastUpdate, latest }) => {
-  // const DataTable = dynamic(async () => {
-  //   const Component = await import('../components/charts/dataTable');
-  //   return Component;
-  // }, { ssr: false })
-
   return (
     <Fragment>
       <Navigation />
