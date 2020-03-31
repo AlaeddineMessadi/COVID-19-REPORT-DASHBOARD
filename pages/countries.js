@@ -7,7 +7,7 @@ import Navigation from '../components/navigation';
 
 
 
-const DataTablePage = ({ lastUpdate, latest }) => {
+const CountriesPage = ({ lastUpdate, latest }) => {
   const DataTable = dynamic(async () => {
     const Component = await import('../components/charts/dataTable');
     return Component;
@@ -20,7 +20,7 @@ const DataTablePage = ({ lastUpdate, latest }) => {
       <div className="hero is-medium is-primary">
         <div className="hero-body">
           <SectionTitle
-            title="DataTable"
+            title="Countries"
             subtitle={ lastUpdate ? `Last Update: ${convertISODate(lastUpdate)}` : '' } />
         </div>
       </div>
@@ -35,7 +35,7 @@ const DataTablePage = ({ lastUpdate, latest }) => {
 }
 
 
-DataTablePage.getInitialProps = async (ctx) => {
+CountriesPage.getInitialProps = async (ctx) => {
   try {
     let { data: latest, lastUpdate } = await ApiManager.readLatest(null, null, true);
 
@@ -46,4 +46,4 @@ DataTablePage.getInitialProps = async (ctx) => {
   }
 }
 
-export default DataTablePage
+export default CountriesPage

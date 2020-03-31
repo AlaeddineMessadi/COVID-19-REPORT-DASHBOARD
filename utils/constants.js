@@ -34,10 +34,14 @@ export const HELP = {
 }
 
 export const COLORS = {
-  confirmed: "#8884d8",
+  confirmed: "#3298dc",
+  confirmedLight: "rgba(52, 151, 220, 0.59)",
   deaths: "#d9534f",
-  recovered: "#4bbf73",
-  fatalityRate: "",
+  deathsLight: "rgba(217, 83, 79, 0.5)",
+  recovered: "#5cb85c",
+  recoveredLight: "rgba(92, 184, 92, 0.5)",
+  fatalityRate: "#dee5ed",
+  fatalityRateLight: "rgba(222, 229, 237, 0.5)",
 }
 
 export const ICONS = {

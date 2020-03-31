@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Router from 'next/router'
 import NProgress from 'nprogress'
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 
 // import logo from '../static/logo.png';
 
@@ -63,9 +63,9 @@ const Navigation = (params) => {
                 Regions
 							</a>
             </Link>
-            <Link href="/datatable ">
+            <Link href="/countries ">
               <a className="navbar-item" onClick={ e => toggleIsActive() }>
-                DataTable
+                Countries
 							</a>
             </Link>
             <Link href="/news">
