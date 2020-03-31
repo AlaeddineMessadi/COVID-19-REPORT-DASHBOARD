@@ -19,7 +19,6 @@ const NewsPage = props => {
       const { data: { articles, totalResults } } = await ApiManager.readLatestNews('corona', NUMBER_ARTICLES, page + 1)
 
       setState([...state, ...articles])
-      console.log(state);
 
       setPage(page + 1);
     } catch (error) {

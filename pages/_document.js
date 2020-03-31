@@ -3,7 +3,6 @@
  */
 import Document, { Html, Main, NextScript, Head } from 'next/document'
 import FooterSection from '../components/footer'
-import Navigation from '../components/navigation'
 import { Fragment } from 'react';
 export default class Layout extends Document {
 	static async getInitialProps(ctx) {
@@ -12,8 +11,22 @@ export default class Layout extends Document {
 		return { ...initialProps, isProduction }
 	}
 
+	setGoogleTags() {
+		return {
+			__html: `
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', '${process.env.ANALYTICS_CORONA_ID}');
+      `
+		};
+	}
+
 	render() {
 		const { isProduction } = this.props;
+		// GA.init();
+
 		return (
 			<Html lang="en">
 				<Head>
@@ -35,7 +48,20 @@ export default class Layout extends Document {
 				/>
 				<NextScript />
 				<script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js"></script>
+
+				{ true && (
+					<Fragment>
+						<script
+							async
+							src={ `https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_CORONA_ID}` }
+						/>
+						<script dangerouslySetInnerHTML={ this.setGoogleTags() } />
+					</Fragment>
+				) }
+
 			</Html>
 		)
 	}
 }
+
+// UA - 48019163 - 11

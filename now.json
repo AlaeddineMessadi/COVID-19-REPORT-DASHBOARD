@@ -3,7 +3,8 @@
     "env": {
       "API_URL": "https://covid-19-report-api.now.sh/api/v1",
       "MAPBOXGL_TOKEN": "@mapboxgl_token",
-      "APILIST_TOKEN": "@apilist_token"
+      "APILIST_TOKEN": "@apilist_token",
+      "ANALYTICS_CORONA_ID": "@analytics_corona_id"
     }
   }
 }

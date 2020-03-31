@@ -1,8 +1,7 @@
 import App from 'next/app'
-
-
 import '../styles/main.scss';
-
+import Router from 'next/router';
+import GA, { Analytics, trackPageView } from '../utils/analytics';
 
 
 export default class extends App {
@@ -14,6 +13,12 @@ export default class extends App {
 		}
 
 		return { pageProps }
+	}
+
+	componentDidMount() {
+		Router.onRouteChangeComplete = url => {
+			trackPageView(url);
+		};
 	}
 
 	render() {
