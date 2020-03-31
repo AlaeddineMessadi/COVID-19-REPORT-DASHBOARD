@@ -24,17 +24,17 @@ The virus is very serious, please follow the guidance of your local authorities 
         <div className="container">
           {
             articles.slice(0, 10).filter(e => e.description).map(({ title, author, description, url, urlToImage, publishedAt }, i) => (
-              <div key={ i } class="box">
-                <article class="media">
-                  <div class="media-left">
-                    <figure class="image is-128x128">
+              <div key={ i } className="box">
+                <article className="media">
+                  <div className="media-left">
+                    <figure className="image is-128x128">
                       <a href={ url } target="_blank" >
                         <img src={ urlToImage } alt="Image" />
                       </a>
                     </figure>
                   </div>
-                  <div class="media-content">
-                    <div class="content">
+                  <div className="media-content">
+                    <div className="content">
                       <p>
                         <a href={ url } target="_blank" >
                           <strong>{ title }</strong>
