@@ -31,11 +31,12 @@ function Contact({ children, id = "contact" }) {
               operated officially and updated by the Johns Hopkins University Center for Systems Science and Engineering <a href="https://github.com/CSSEGISandData/COVID-19">(JHU CSSE)</a></p>
 
                 <p>The second project <a href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD">@COVID-19-REPORT-DASHBOARD</a> is the client side
-                which consume the api's endpoints and render received data in the page</p>
+                which consume the api's endpoints and render received data to the user interface</p>
                 <br />
 
                 <p>
-                  If you are a Developer, Designer, Writer you just have an idea and you want to contribute, please get in touch with the email bellow
+                  If you are a Developer, Designer, Writer and you would like to contribute, please check the repositories,
+                  or if you just have an idea please don't hesitate get in touch to the listed email bellow
               </p>
                 <p>Contact email:  <a href="mailto: coronaviursstats@gmail.com" target="_blank"> coronaviursstats@gmail.com</a></p>
               </div>
