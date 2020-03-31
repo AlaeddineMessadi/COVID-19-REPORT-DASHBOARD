@@ -28,6 +28,13 @@ class ApiManager {
     const { data } = await Axios.get(endpoint.getTimeseriesUrl(), { params: { iso, province } });
     return data;
   }
+
+  static async readLatestNews(query = 'corona') {
+    const APILIST_URL = `http://newsapi.org/v2/top-headlines?q=${query}&apiKey=${process.env.APILIST_TOKEN}`;
+
+    const data = await Axios.get(APILIST_URL);
+    return data;
+  }
 }
 
 export default ApiManager;

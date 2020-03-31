@@ -13,7 +13,8 @@ const nextConfig = {
 	target: 'serverless',
 	env: {
 		API_URL: process.env.API_URL,
-		MAPBOXGL_TOKEN: process.env.MAPBOXGL_TOKEN
+		MAPBOXGL_TOKEN: process.env.MAPBOXGL_TOKEN,
+		APILIST_TOKEN: process.env.APILIST_TOKEN
 	}
 
 }
