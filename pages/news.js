@@ -3,9 +3,30 @@ import Navigation from "../components/navigation";
 import SectionTitle from "../components/sectionTitle";
 import ApiManager from "../utils/apiManager";
 import { convertISODate } from "../utils";
+import { useState } from "react";
+
+const NUMBER_ARTICLES = 8;
+const FIRST_PAGE = 1;
+const IMG_URL = 'https://images.unsplash.com/flagged/photo-1584036561584-b03c19da874c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80';
+
+const NewsPage = props => {
+  const [state, setState] = useState(props.articles || [])
+  const [page, setPage] = useState(FIRST_PAGE)
 
 
-const NewsPage = ({ articles = [], totalResults }) => {
+  const loadMoreArticles = async () => {
+    try {
+      const { data: { articles, totalResults } } = await ApiManager.readLatestNews('corona', NUMBER_ARTICLES, page + 1)
+
+      setState([...state, ...articles])
+      console.log(state);
+
+      setPage(page + 1);
+    } catch (error) {
+      console.log('cannot load more articles');
+    }
+  }
+
   return (<div>
     <Navigation />
     <div className="section">
@@ -23,7 +44,7 @@ The virus is very serious, please follow the guidance of your local authorities 
         <br />
         <div className="container">
           {
-            articles.slice(0, 10).filter(e => e.description).map(({ title, author, description, url, urlToImage, publishedAt }, i) => (
+            state.filter(e => e.description).map(({ title, author, description, url, urlToImage = IMG_URL, publishedAt }, i) => (
               <div key={ i } className="box">
                 <article className="media">
                   <div className="media-left">
@@ -48,6 +69,9 @@ The virus is very serious, please follow the guidance of your local authorities 
               </div>
             ))
           }
+          <div className="center">
+            <button className="button is-primary" onClick={ loadMoreArticles }>Load More</button>
+          </div>
         </div>
       </div>
     </div>
@@ -56,7 +80,7 @@ The virus is very serious, please follow the guidance of your local authorities 
 
 NewsPage.getInitialProps = async (ctx) => {
   try {
-    const { data: { articles, totalResults } } = await ApiManager.readLatestNews();
+    const { data: { articles, totalResults } } = await ApiManager.readLatestNews('corona', NUMBER_ARTICLES, FIRST_PAGE);
 
     return { articles, totalResults }
   } catch (error) {

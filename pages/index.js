@@ -124,7 +124,7 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 							!regional.selected ?
 								<div className="notification is-primary">
 									<button className="delete" onClick={ e => setRegional({ ...regional, selected: true }) }></button>
-									Please select your the region
+									Please select the country/region
 								</div> : ''
 						}
 					</div>

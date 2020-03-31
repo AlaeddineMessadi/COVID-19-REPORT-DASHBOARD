@@ -45,8 +45,8 @@ export const COLORS = {
 }
 
 export const ICONS = {
-  confirmed: <i className="fas fa-hospital-alt is-size-3 is-pulled-right has-text-info"></i>,
-  deaths: <i className="fas fa-biohazard is-size-3 is-pulled-right has-text-danger"></i>,
-  recovered: <i className="fas fa-first-aid is-size-3 is-pulled-right has-text-success"></i>,
-  percentage: <i className="fas fa-percent is-size-3 is-pulled-right has-text-gray"></i>
+  confirmed: <span><i className="fas fa-hospital-alt is-size-3 is-pulled-right has-text-info"></i></span>,
+  deaths: <span><i className="fas fa-biohazard is-size-3 is-pulled-right has-text-danger"></i></span>,
+  recovered: <span><i className="fas fa-first-aid is-size-3 is-pulled-right has-text-success"></i></span>,
+  percentage: <span><i className="fas fa-percent is-size-3 is-pulled-right has-text-gray"></i></span>
 }

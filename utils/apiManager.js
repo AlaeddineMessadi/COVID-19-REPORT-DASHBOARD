@@ -29,8 +29,8 @@ class ApiManager {
     return data;
   }
 
-  static async readLatestNews(query = 'corona') {
-    const APILIST_URL = `http://newsapi.org/v2/top-headlines?q=${query}&apiKey=${process.env.APILIST_TOKEN}`;
+  static async readLatestNews(query = 'corona', pageSize, page) {
+    const APILIST_URL = `https://newsapi.org/v2/top-headlines?q=${query}&apiKey=${process.env.APILIST_TOKEN}${pageSize ? `&pageSize=${pageSize}` : ``}${page ? `&page=${page}` : ``}`;
 
     const data = await Axios.get(APILIST_URL);
     return data;
