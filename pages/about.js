@@ -39,6 +39,11 @@ function Contact({ children, id = "contact" }) {
                   or if you just have an idea please don't hesitate get in touch to the listed email bellow
               </p>
                 <p>Contact email:  <a href="mailto: coronaviursstats@gmail.com" target="_blank"> coronaviursstats@gmail.com</a></p>
+                <p>
+                  <a href="https://github.com/AlaeddineMessadi/COVID-19-REPORT-DASHBOARD" target="_blank">
+                    <img src="/public/static/github.svg" />
+                  </a>
+                </p>
               </div>
             </div>
           </div>

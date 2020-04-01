@@ -6,7 +6,9 @@ COVID-19 daily report dashboard of all cases worldwide
 <div align="center">
 	<br> <img src="/public/static/corona-mask.png" width="80px"> <br> <hr>
 </div>
-
+<div align="center">
+	<br> <img src="/public/static/screenshot.gif" width="600px"> <br> <hr>
+</div>
 
 ## Get Started
 
