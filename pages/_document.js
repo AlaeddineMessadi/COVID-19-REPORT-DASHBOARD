@@ -4,6 +4,8 @@
 import Document, { Html, Main, NextScript, Head } from 'next/document'
 import FooterSection from '../components/footer'
 import { Fragment } from 'react';
+import { NextSeo } from 'next-seo';
+
 export default class Layout extends Document {
 	static async getInitialProps(ctx) {
 		const isProduction = process.env.NODE_ENV === 'production';

@@ -1,8 +1,12 @@
 import App from 'next/app'
-import '../styles/main.scss';
 import Router from 'next/router';
-import GA, { Analytics, trackPageView } from '../utils/analytics';
+import { Fragment } from 'react';
+import { DefaultSeo } from 'next-seo';
 
+
+import '../styles/main.scss';
+import { trackPageView } from '../utils/analytics';
+import SEO from '../utils/next-seo.config';
 
 export default class extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -23,6 +27,11 @@ export default class extends App {
 
 	render() {
 		const { Component, pageProps, appProps } = this.props
-		return (<Component { ...pageProps } { ...appProps } />)
+		return (
+			<Fragment>
+				<DefaultSeo { ...SEO } />
+				<Component { ...pageProps } { ...appProps } />
+			</Fragment>
+		)
 	}
 }

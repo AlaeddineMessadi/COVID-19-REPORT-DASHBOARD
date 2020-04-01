@@ -1,4 +1,6 @@
 import React, { useEffect, Fragment, useState } from 'react'
+import dynamic from 'next/dynamic';
+import { NextSeo } from 'next-seo';
 
 import Brief from '../components/sections/brief';
 import SectionTitle from '../components/sectionTitle';
@@ -8,7 +10,6 @@ import BriefRegional from '../components/sections/briefRegional';
 import InputSearch from '../components/sections/search';
 import RegionalLineCharts from '../components/sections/regionalLineCharts';
 import BriefLineCharts from '../components/sections/briefLineCharts';
-import dynamic from 'next/dynamic';
 import Navigation from '../components/navigation';
 
 const StikyHeatMap = dynamic(() => import('../components/charts/stikyHeatMap'), { ssr: false })
@@ -82,6 +83,8 @@ function IndexPage({ brief, lastUpdate, countries, latest, briefTimeseries }) {
 
 	return (
 		<Fragment>
+			<NextSeo title="Home" titleTemplate='%s | Stats-Coronavirus' />
+
 			<Navigation />
 			<div className="hero is-medium is-primary">
 				<div className="hero-body">

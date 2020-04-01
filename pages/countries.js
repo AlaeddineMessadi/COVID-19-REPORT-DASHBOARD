@@ -5,12 +5,15 @@ import { convertISODate } from '../utils';
 import { Fragment } from 'react';
 import Navigation from '../components/navigation';
 import DataTable from '../components/charts/dataTable';
+import { NextSeo } from 'next-seo';
 
 
 
 const CountriesPage = ({ lastUpdate, latest }) => {
   return (
     <Fragment>
+      <NextSeo title="Countries" titleTemplate='%s | Stats-Coronavirus' />
+
       <Navigation />
 
       <div className="hero is-medium is-primary">

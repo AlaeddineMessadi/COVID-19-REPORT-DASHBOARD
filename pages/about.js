@@ -1,10 +1,13 @@
 import SectionTitle from '../components/sectionTitle'
 import { Fragment } from 'react'
 import Navigation from '../components/navigation'
+import { NextSeo } from 'next-seo'
 
 function Contact({ children, id = "contact" }) {
   return (
     <Fragment>
+      <NextSeo title="About" titleTemplate='%s | Stats-Coronavirus' />
+
       <Navigation />
       <section className="section has-text-centered">
         <SectionTitle
