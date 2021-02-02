@@ -13,7 +13,9 @@
     "eslint:fix": "eslint '**/*.js' --fix",
     "prettier": "prettier --write '**/*.js'",
     "prod": "now --prod -e APILIST_TOKEN=@apilist_token -e ANALYTICS_CORONA_ID=@analytics_corona_id",
-    "deploy": "now -e APILIST_TOKEN=@apilist_token -e ANALYTICS_CORONA_ID=@analytics_corona_id"
+    "deploy": "now -e APILIST_TOKEN=@apilist_token -e ANALYTICS_CORONA_ID=@analytics_corona_id",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.8",
@@ -40,7 +42,8 @@
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.3",
     "react-select": "^3.1.0",
-    "recharts": "^1.8.5"
+    "recharts": "^1.8.5",
+    "snyk": "^1.440.4"
   },
   "devDependencies": {
     "@now/node": "^1.4.1",
@@ -50,5 +53,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1"
-  }
+  },
+  "snyk": true
 }
