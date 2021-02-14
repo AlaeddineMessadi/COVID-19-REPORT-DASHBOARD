@@ -16,7 +16,7 @@
     "deploy": "now -e APILIST_TOKEN=@apilist_token -e ANALYTICS_CORONA_ID=@analytics_corona_id"
   },
   "dependencies": {
-    "@material-ui/core": "^4.9.8",
+    "@material-ui/core": "^4.11.2",
     "@stickyboard/openlayers": "^0.1.5",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-source-maps": "^0.0.3",
