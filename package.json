@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Coronavirus COVID-19 Dashboard",
   "main": "index.js",
-  "author": "Alaeddine Messadi <alaeddine.messadi@icloud.com>",
+  "author": "Alaeddine Messadi <alaeddine.messadi@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "next",
