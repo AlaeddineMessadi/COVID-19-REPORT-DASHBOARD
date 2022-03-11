@@ -20,7 +20,7 @@
     "@stickyboard/openlayers": "^0.1.5",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-source-maps": "^0.0.3",
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "bloomer": "^0.6.5",
     "bulma": "^0.8.0",
     "bulma-divider": "^0.2.0",
