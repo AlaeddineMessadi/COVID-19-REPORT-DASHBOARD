@@ -28,7 +28,7 @@
     "dotenv": "^8.2.0",
     "framer-motion": "^1.10.0",
     "material-table": "^1.57.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "next": "^10.0.6",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^1.0.3",
